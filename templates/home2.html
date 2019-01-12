@@ -1,0 +1,66 @@
+{% from "macros.html" import multi_choice with context %}
+{% from "macros.html" import panel_title with context %}
+{% from "macros.html" import numeric_q with context %}
+{% extends "layout.html" %}
+{% block content %}
+<style>
+after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  float: left;
+  width: 100%;
+}
+
+.content {
+  width: 94%;
+  margin: 0px auto;
+  background-color: yellow;
+  padding: 30px;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;                /* NEW */
+}
+
+.categories_item a {
+  color: white;
+}
+.categories .categories_item {
+  min-width: 100px;
+  max-width: 200px;
+  flex-basis: auto; /* default value */
+  flex-grow: 1;
+}
+.categories_item {
+  flex: 1 0 20%;     
+  /* NEW */
+  margin: 5px;                   /* NEW */
+  background-color: light-blue;
+  flex-grow: 1;
+}
+</style>
+
+<form>
+   
+  <div class="categories">
+  {% for n in my_list %}
+    <div class="categories_item"> 
+         {{ multi_choice(n, "math1", "M1-") }}
+    </div>
+ </div> 
+  {% endfor %}
+</div>
+
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}

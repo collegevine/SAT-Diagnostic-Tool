@@ -1,0 +1,49 @@
+{% macro multi_choice(index, section, abbr) %}
+{% set qname %}{{section}}_{{index}}{% endset %}
+<div class="input-group">
+    <label for="Question {{ abbr }}{{ index }}"><i>{{ index }}</i></label>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="{{qname}}_a" name="{{qname}}" class="custom-control-input" value='A'><label class="custom-control-label" for="{{qname}}_a">A</label></div>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="{{qname}}_b" name="{{qname}}" class="custom-control-input" value='B'>
+        <label class="custom-control-label" for="{{qname}}_b">B</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="{{qname}}_c" name="{{qname}}" class="custom-control-input" value='C'>
+        <label class="custom-control-label" for="{{qname}}_c">C</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="{{qname}}_d" name="{{qname}}" class="custom-control-input" value='D'>
+        <label class="custom-control-label" for="{{qname}}_d">D</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" lass="form-control form-control-sm" id="{{qname}}__" name="{{qname}}" class="custom-control-input" checked=true value=''>
+        <label class="custom-control-label" for="{{qname}}__">_</label>
+    </div>
+ </div>
+ {% endmacro %}
+
+{% macro panel_title(msg) %}
+ <div class="panel panel-default">
+     <div class="panel-heading">{{ msg }}</div>
+</div>
+{% endmacro %}
+
+{% macro numeric_q2(index, section, label) %}
+{% set qname %}{{section}}_{{index}}{% endset %}
+<div class="input-group">
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">{{label}}{{index}}</label>
+    <div class="col-sm-4 my-1">
+        <label class="sr-only" for="{{qname}}">{{label}}{{index}}</label>
+        <input type="text" class="form-control" id="{{qname}}" placeholder="">
+    </div>
+</div>
+{% endmacro %}
+
+{% macro numeric_q(index, section, label) %}
+{% set qname %}{{section}}_{{index}}{% endset %}
+<div class="input-group">
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">{{label}}{{index}}</label>
+    <input type="text" class="form-control" name={{qname}}>
+</div>
+{% endmacro %}

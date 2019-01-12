@@ -1,0 +1,249 @@
+{% from "macros.html" import multi_choice with context %}
+{% from "macros.html" import panel_title with context %}
+{% from "macros.html" import numeric_q with context %}
+{% extends "layout.html" %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+   $('input').click(function(e){
+    if (e.shiftKey) {
+        console.log('here')
+        $(this).prop('checked', false);
+    }
+});
+</script>
+<style>
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  padding: 10px;
+  min-width: 315px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 0px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: center;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 1200px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 1200px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+<form method="POST" action="SATAnalysis">
+
+<div class="container">
+ <div class="row">
+    <div class="col-sm">
+      <div class="basic-panel-body"><h3>Basic Info</h3></div>
+    </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-basic" aria-expanded="true" aria-controls="collapse-basic">
+            Hide/Show
+        </button>
+    </div>
+
+ </div>
+</div>
+
+<div class="collapse show" id="collapse-basic">
+<div class="panel panel-default">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="student_name">Student Name</label>
+      <input type="text" class="form-control" id="student_name" placeholder="Student Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="student_email">Student Email</label>
+      <input type="email" class="form-control" id="student_email" placeholder="Student Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="parent_name">Parent Name</label>
+      <input type="text" class="form-control" id="parent_name" placeholder="Parent Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="parent_email_phone">Parent Email or Phone</label>
+      <input type="email" class="form-control" id="parent_email_phone" placeholder="Email or Phone">
+    </div>
+   </div>
+ </div>
+ </div>
+
+
+<div class="container">
+ <div class="row">
+    <div class="col-sm">
+      <div class="verbal-panel-body"><h3>SAT <b>Verbal</b> Section</h3></div>
+    </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-verbal" aria-expanded="true" aria-controls="collapse-verbal">
+            Hide/Show
+        </button>
+    </div>
+
+ </div>
+</div>
+
+<div class="collapse show" id="collapse-verbal">
+    <div class="row">
+        <div class="column">
+        {% for n in [1,2,3,4,5,6,7,8,10,11,12,13] %}
+            {{ multi_choice(n, "verbal","V") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+        {% for n in [14,15,16,17,18,19,20,21,22,23,24,25] %}
+            {{ multi_choice(n, "verbal","V") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+        {% for n in [26,27,28,29,30,31,32,33,34,35,36,37,38] %}
+            {{ multi_choice(n, "verbal","V") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+        {% for n in [39,40,41,42,43,44,45,46,47,48,49,50,51,52] %}
+            {{ multi_choice(n, "verbal","V") }}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+ <div class="row">
+    <div class="col-sm">
+      <div class="writing-panel-body"><h3>SAT <b>Writing</b> Section</h3></div>
+    </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-writing" aria-expanded="true" aria-controls="collapse-writing">
+            Hide/Show
+        </button>
+    </div>
+ </div>
+</div>
+
+<div class="collapse show" id="collapse-writing">
+    <div class="row">
+        <div class="column">
+        {% set verbal = verbal %}
+            {% for n in [1,2,3,4,5,6,7,8,10,11] %}
+        {{ multi_choice(n, "writing", "W") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+        {% for n in [12,13,14,15,16,17,18,19,20,21,22] %}
+            {{ multi_choice(n, "writing", "W") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+        {% for n in [23,24,25,26,27,28,29,30,31,32,33] %}
+            {{ multi_choice(n, "writing", "W") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+            {% for n in [34,35,36,37,38,39,40,41,42,43,44] %}
+        {{ multi_choice(n, "writing", "W") }}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+ <div class="row">
+    <div class="col-sm">
+      <div class="math1-panel-body"><h3>SAT <b>MATH Section 1</b></h3></div>
+    </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math-1" aria-expanded="true" aria-controls="collapse-math-1">
+            Hide/Show
+        </button>
+    </div>
+ </div>
+</div>
+
+<div class="collapse show" id="collapse-math-1">
+    <div class="row">
+        <div class="column">
+        {% set verbal = verbal %}
+        {% for n in [1,2,3,4,5,6,7] %}
+            {{ multi_choice(n, "math1", "M-") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+        {% for n in [8,9,10,11,12,13,14,15] %}
+            {{ multi_choice(n, "math1", "M-") }}
+        {% endfor %}
+        </div>
+        <div class="column">
+        {% for n in [16,17,18,19,20] %}
+            {{ numeric_q(n, "math1", "M-") }}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+ <div class="row">
+    <div class="col-sm">
+      <div class="math1-panel-body"><h3>SAT <b>MATH Section 2</b></h3></div>
+    </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math-2" aria-expanded="true" aria-controls="collapse-math-2">
+            Hide/Show
+        </button>
+    </div>
+ </div>
+</div>
+<div class="collapse show" id="collapse-math-2">
+    <div class="row">
+        <div class="column">
+    {% set verbal = verbal %}
+    {% for n in [1,2,3,4,5,6,7,8,9,10] %}
+        {{ multi_choice(n, "math2", "M2-") }}
+    {% endfor %}
+        </div>
+        <div class="column">
+    {% for n in [11,12,13,14,15,16,17,18,19,20] %}
+        {{ multi_choice(n, "math2", "M2-") }}
+    {% endfor %}
+        </div>
+        <div class="column">
+    {% for n in [21,22,23,24,25,26,27,28,29,30] %}
+        {{ multi_choice(n, "math2", "M2-") }}
+    {% endfor %}
+        </div>
+        <div class="column">
+    {% for n in [31,32,33,34,35,36,37,38] %}
+        {{ numeric_q(n, "math2", "M2-") }}
+    {% endfor %}
+        </div>
+    </div>
+  </div>
+</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
