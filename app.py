@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__, template_folder = "./templates")
 
-@app.route('/home')
+@app.route('/')
 def index():
     return render_template('home.html', my_list=range(1,41))
 @app.route('/img/<path:path>')
