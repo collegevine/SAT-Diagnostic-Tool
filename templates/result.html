@@ -1,0 +1,74 @@
+{% from "macros.html" import bs_table with context %}
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card">
+                <h3>SAT Score: {{obj.total_score}}</h3>
+                <h3>Percentile: {{obj.total_percentile}}</h3>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <h3>Verbal Score: {{obj.verbal_score}}</h3>
+                <h3>Percentile: {{obj.verbal_percentile}}</h3>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <h3>Math Score: {{obj.math_score}}</h3>
+                <h3>Percentile: {{obj.math_percentile}}</h3>
+            </div>
+        </div>
+
+    </div>
+  <div class="row">
+      <div class="col-6">
+            <div class="card">
+                <h3 class="card-title">SAT Reading Concepts</h3>
+                {{ bs_table(cols_concept,table.r_concept) }}
+            </div>
+      </div>
+      <div class="col-6">
+            <h2>SAT Reading Difficulty</h2>
+            {{ bs_table(cols_diff, table.r_diff) }}
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-6">
+            <h2>SAT Writing Concepts</h2>
+             {{ bs_table(cols_concept, table.w_concept) }}
+      </div>
+      <div class="col-6">
+            <h2>SAT Writing Difficulty</h2>
+            {{ bs_table(cols_diff, table.w_diff) }}
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-6">
+            <h2>SAT Math Concepts</h2>
+             {{ bs_table(cols_concept, table.m_concept) }}
+      </div>
+      <div class="col-6">
+            <h2>SAT Math Difficulty</h2>
+            {{ bs_table(cols_diff, table.m_diff) }}
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-6">
+          <img src="{{math_plot}}"> 
+      </div>
+      <div class="col-6">
+          <img src="{{verbal_plot}}"> 
+      </div>
+  </div>
+
+</div>
+
+
+
+{% endblock %}
+
+
+

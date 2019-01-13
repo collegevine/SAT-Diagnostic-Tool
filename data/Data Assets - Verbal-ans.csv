@@ -1,0 +1,53 @@
+question,answer,difficulty,concept,concept2,
+1,C,5,Literature,,
+2,D,3,Literature,Supporting Evidence,
+3,D,5,Literature,Words in Context,
+4,C,3,Literature,,
+5,A,3,Literature,,
+6,A,2,Literature,Supporting Evidence,
+7,B,5,Literature,Fact Recall,
+8,D,3,Literature,,
+9,D,3,Literature,Words in Context,
+10,A,2,Literature,Words in Context,
+11,C,5,Social Science,Fact Recall,
+12,D,3,Social Science,Fact Recall,
+13,A,4,Social Science,Words in Context,
+14,B,4,Social Science,,
+15,A,3,Social Science,Supporting Evidence,
+16,C,3,Social Science,,
+17,C,3,Social Science,Supporting Evidence,
+18,A,3,Social Science,Words in Context,
+19,B,5,Social Science,Data Analysis,Author-Based Questions
+20,A,2,Social Science,Data Analysis,
+21,D,3,Social Science,Data Analysis,
+22,A,4,Science,,
+23,C,3,Science,Author-Based Questions,
+24,C,2,Science,Words in Context,
+25,B,4,Science,Fact Recall,
+26,C,3,Science,Supporting Evidence,
+27,A,5,Science,,
+28,B,4,Science,Supporting Evidence,
+29,D,4,Science,Fact Recall,
+30,D,2,Science,Author-Based Questions,
+31,D,2,Science,Words in Context,
+32,D,4,Historical,Dual Passage,Author-Based Questions
+33,B,3,Historical,Dual Passage,Words in Context
+34,A,3,Historical,Dual Passage,Words in Context
+35,D,4,Historical,Dual Passage,Author-Based Questions
+36,B,4,Historical,Dual Passage,Author-Based Questions
+37,D,3,Historical,Dual Passage,Supporting Evidence
+38,D,4,Historical,Dual Passage,Author-Based Questions
+39,C,3,Historical,Dual Passage,Supporting Evidence
+40,A,4,Historical,Dual Passage,Author-Based Questions
+41,B,4,Historical,Dual Passage,Author-Based Questions
+42,C,3,Historical,Science,
+43,B,3,Historical,Science,Author-Based Questions
+44,A,2,Historical,Science,Supporting Evidence
+45,D,2,Historical,Science,Words in Context
+46,A,2,Historical,Science,
+47,D,3,Historical,Science,
+48,C,3,Historical,Science,Words in Context
+49,D,3,Historical,Science,
+50,C,4,Historical,Science,Data Analysis
+51,C,2,Historical,Science,Data Analysis
+52,A,2,Historical,Science,Data Analysis
