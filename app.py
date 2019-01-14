@@ -33,8 +33,8 @@ def success():
             return render_template('result.html',
                     table = tables,
                     obj = obj,
-                    cols_concept = ['', 'Concept', 'Percent', 'Wrong', 'Total'],
-                    cols_diff = ['', 'Difficulty', 'percent', 'Wrong', 'Total'],
+                    cols_concept = ['', 'Concept', 'Wrong', 'Percent of Total Test Questions'],
+                    cols_diff = ['','Question Level Difficulty', 'Wrong', 'Percent of Total Questions'],
                     verbal_plot = verbal_plot,
                     math_plot = math_plot)
 

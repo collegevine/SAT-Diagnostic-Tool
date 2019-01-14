@@ -63,6 +63,7 @@ def make_file():
 
 
 def plot_math(dicts):
+    print("math")
     df = pd.DataFrame.from_dict(dicts.get('math_difficulty'))
     df = df.sort_values(['difficulty'])
 
@@ -83,9 +84,11 @@ def plot_math(dicts):
 
 
 def plot_verbal(dicts):
+    print("verbal")
     v = pd.DataFrame.from_dict(dicts.get('reading_difficulty'))[['difficulty', 'wrong']]
     w = pd.DataFrame.from_dict(dicts.get('writing_difficulty'))[['difficulty', 'wrong']]
     m = pd.merge(v,w, on='difficulty')
+    print('merge')
     m['wrong'] = m.apply(lambda row: row['wrong_x'] + row['wrong_y'],axis=1)
     df = m.sort_values(['difficulty'])
 
@@ -96,7 +99,6 @@ def plot_verbal(dicts):
 
     plt.bar(y_pos, num_wrong, align='center')
     plt.xticks(y_pos, objects, rotation='vertical')
-    #plt.xticks(y_pos, objects)
     plt.ylabel('Number of Questions')
     plt.xlabel('Difficulty Level of Question')
     plt.title('SAT Verbal Questions Wrong By Difficulty')
@@ -105,7 +107,13 @@ def plot_verbal(dicts):
     plt.close()
     return ffile
 
+def mk_concept_dict(miss, total):
+    llist = [{'concept': k, 'wrong': int(miss.get(k,0)), 'pct' : fmt_percentage(miss.get(k,0), sum(total.values())), }for k in total.keys()]
+    newlist = sorted(llist, key=lambda k: float(k['pct']), reverse=True)
+    return newlist
 
+def mk_diff_dict(miss, total):
+    return [{'difficulty': k, 'wrong': miss.get(k,0), 'pct' : fmt_percentage(miss.get(k,0), sum(total.values())) }  for k in total.keys()]
 
 def calculate_math_score(ans_dict):
     # MATH 1 Correct answers
@@ -130,12 +138,13 @@ def calculate_math_score(ans_dict):
     # Math concepts
     m_total_concepts = agg_counts_dict(m_ans_df[['concept','concept2']])
     m_missed_concepts =  agg_counts_dict(m_ans_df.loc[m_ans_df['correct'] == False][['concept','concept2']])
-    m_concept_dict = [{'concept': k, 'pct' : fmt_percentage(m_missed_concepts.get(k,0), sum(m_total_concepts.values())), 'wrong': m_missed_concepts.get(k,0), 'total': m_total_concepts.get(k)}  for k in m_total_concepts.keys()]
+    m_concept_dict =  mk_concept_dict(m_missed_concepts, m_total_concepts)
 
     # Math Difficulty
     m_missed_diff = dict(m_ans_df.loc[m_ans_df['correct'] == False][['difficulty']].apply(pd.value_counts)['difficulty'])
     m_total_diff = agg_counts_dict(m_ans_df[['difficulty']])
-    m_diff_dict = [{'difficulty': k, 'pct' : fmt_percentage(m_missed_diff.get(k,0), sum(m_total_diff.values())), 'wrong': m_missed_diff.get(k,0), 'total': m_total_diff.get(k)}  for k in m_total_diff.keys()]
+    m_diff_dict = mk_diff_dict(m_missed_diff, m_total_diff)
+
     odict = {
         'math_score' : score,
         'math_percentile' : percentile,
@@ -168,22 +177,22 @@ def calculate_verbal_score(ans_dict):
     # Verbal Concepts
     v_total_concepts = agg_counts_dict(v_ans_df[['concept','concept2']])
     v_missed_concepts =  agg_counts_dict(v_ans_df.loc[v_ans_df['correct'] == False][['concept','concept2']])
-    v_concept_dict = [{'concept': k, 'pct' : fmt_percentage(v_missed_concepts.get(k,0), sum(v_total_concepts.values())), 'wrong': v_missed_concepts.get(k,0), 'total': v_total_concepts.get(k)}  for k in v_total_concepts.keys()]
+    v_concept_dict =  mk_concept_dict(v_missed_concepts, v_total_concepts)
 
     # Writing Concepts
     w_total_concepts = agg_counts_dict(w_ans_df[['concept','concept2']])
     w_missed_concepts =  agg_counts_dict(w_ans_df.loc[w_ans_df['correct'] == False][['concept','concept2']])
-    w_concept_dict = [{'concept': k, 'pct' : fmt_percentage(w_missed_concepts.get(k,0), sum(w_total_concepts.values())), 'wrong': w_missed_concepts.get(k,0), 'total': w_total_concepts.get(k)}  for k in w_total_concepts.keys()]
+    w_concept_dict =  mk_concept_dict(w_missed_concepts, w_total_concepts)
 
     # Verbal Difficulty
     v_missed_diff = dict(v_ans_df.loc[v_ans_df['correct'] == False][['difficulty']].apply(pd.value_counts)['difficulty'])
     v_total_diff = agg_counts_dict(v_ans_df[['difficulty']])
-    v_diff_dict = [{'difficulty': k, 'pct' : fmt_percentage(v_missed_diff.get(k,0), sum(v_total_diff.values())), 'wrong': v_missed_diff.get(k,0), 'total': v_total_diff.get(k)}  for k in v_total_diff.keys()]
+    v_diff_dict = mk_diff_dict(v_missed_diff, v_total_diff)
 
     # Writing Difficulty
     w_missed_diff = dict(w_ans_df.loc[w_ans_df['correct'] == False][['difficulty']].apply(pd.        value_counts)['difficulty'])
     w_total_diff = agg_counts_dict(w_ans_df[['difficulty']])
-    w_diff_dict = [{'difficulty': k, 'pct' : fmt_percentage(w_missed_diff.get(k,0), sum(w_total_diff.values())), 'wrong': w_missed_diff.get(k,0), 'total': w_total_diff.get(k)}  for k in w_total_diff.keys()]
+    w_diff_dict =  mk_diff_dict(w_missed_diff, w_total_diff)
 
     odict = {
         'verbal_score' : score,

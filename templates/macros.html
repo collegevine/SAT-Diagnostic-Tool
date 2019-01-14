@@ -61,7 +61,7 @@
   {% for row in table %}
   {% set rowloop = loop %}
   <tr>
-      <th scope="row">{{ rowloop.index }} </th>
+      <th scope="row"></th>
         {% for key, value in row.items() %}
       <td>{{ value }}</td> 
         {% endfor %}

@@ -5,24 +5,25 @@
     <div class="row">
         <div class="col-sm">
             <div class="card">
-                <h3>SAT Score: {{obj.total_score}}</h3>
-                <h3>Percentile: {{obj.total_percentile}}</h3>
+                <h3>SAT Score: {{obj.total_score}} out of 1600</h3>
+                <h3>Percentile: {{obj.total_percentile}} / 100</h3>
             </div>
         </div>
         <div class="col-sm">
             <div class="card">
-                <h3>Verbal Score: {{obj.verbal_score}}</h3>
-                <h3>Percentile: {{obj.verbal_percentile}}</h3>
+                <h3>Verbal Score: {{obj.verbal_score}} / 800</h3>
+                <h3>Percentile: {{obj.verbal_percentile}} / 100</h3>
             </div>
         </div>
         <div class="col-sm">
             <div class="card">
-                <h3>Math Score: {{obj.math_score}}</h3>
-                <h3>Percentile: {{obj.math_percentile}}</h3>
+                <h3>Math Score: {{obj.math_score}} / 800</h3>
+                <h3>Percentile: {{obj.math_percentile}} / 100</h3>
             </div>
         </div>
 
     </div>
+
   <div class="row">
       <div class="col-6">
             <div class="card">
@@ -73,7 +74,6 @@
           <img src="{{verbal_plot}}"> 
       </div>
   </div>
-
 </div>
 
 

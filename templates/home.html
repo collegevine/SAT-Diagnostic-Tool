@@ -11,6 +11,50 @@
         $(this).prop('checked', false);
     }
 });
+
+fmt_line = function(ans, num){
+    var a = "" + ans;
+    var n = "" + num
+    if (n.length == 1){
+        n = n + " ";
+    }
+    return n + "  " + a;
+}
+
+report = function(subject,maxi){
+    var outs = "" ;
+    for(i = 1; i <= maxi; i++){
+        var locals;
+        locals = $("input[name="+subject+"_" + i + "]:checked").attr('value');
+        var line = fmt_line(locals, i);
+        outs = outs + "</br>" + line;
+    }
+    return outs;
+}
+
+$(document).ready(function () {
+    $("#collapse-verbal-report-btn").click(function (){
+            document.getElementById('verbal-report').innerHTML = report('verbal', 52);
+            });
+ });
+$(document).ready(function () {
+    $("#collapse-writing-report-btn").click(function (){
+            document.getElementById('writing-report').innerHTML = report('writing', 44);
+            });
+ });
+$(document).ready(function () {
+    $("#collapse-math1-report-btn").click(function (){
+            document.getElementById('math1-report').innerHTML = report('math1', 20);
+            });
+ });
+$(document).ready(function () {
+    $("#collapse-math2-report-btn").click(function (){
+            document.getElementById('math2-report').innerHTML = report('math2', 38);
+            });
+ });
+
+
+
 </script>
 <style>
 .row {
@@ -89,6 +133,7 @@
  </div>
 
 
+
 <div class="container">
  <div class="row">
     <div class="col-sm">
@@ -99,6 +144,11 @@
             Hide/Show
         </button>
     </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-verbal-report" aria-expanded="false" aria-controls="collapse-verbal-report" id="collapse-verbal-report-btn">
+            Show Report
+        </button>
+    </div>
 
  </div>
 </div>
@@ -106,7 +156,7 @@
 <div class="collapse show" id="collapse-verbal">
     <div class="row">
         <div class="column">
-        {% for n in [1,2,3,4,5,6,7,8,10,11,12,13] %}
+        {% for n in [1,2,3,4,5,6,7,8,9,10,11,12,13] %}
             {{ multi_choice(n, "verbal","V") }}
         {% endfor %}
         </div>
@@ -127,6 +177,18 @@
         </div>
     </div>
 </div>
+<div class="collapse" id="collapse-verbal-report">
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3> VERBAL ANSWER PREVIEW </h3>
+                <div id='verbal-report'>
+                </div>
+                 
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="container">
@@ -139,6 +201,11 @@
             Hide/Show
         </button>
     </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-writing-report" aria-expanded="false" aria-controls="collapse-writing-report" id="collapse-writing-report-btn">
+            Show Report
+        </button>
+    </div>
  </div>
 </div>
 
@@ -146,7 +213,7 @@
     <div class="row">
         <div class="column">
         {% set verbal = verbal %}
-            {% for n in [1,2,3,4,5,6,7,8,10,11] %}
+            {% for n in [1,2,3,4,5,6,7,8,9,10,11] %}
         {{ multi_choice(n, "writing", "W") }}
         {% endfor %}
         </div>
@@ -167,6 +234,18 @@
         </div>
     </div>
 </div>
+<div class="collapse" id="collapse-writing-report">
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3> WRITING ANSWER PREVIEW </h3>
+                <div id='writing-report'>
+                </div>
+                 
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -178,6 +257,11 @@
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math-1" aria-expanded="true" aria-controls="collapse-math-1">
             Hide/Show
+        </button>
+    </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math1-report" aria-expanded="false" aria-controls="collapse-math1-report" id="collapse-math1-report-btn">
+            Show Report
         </button>
     </div>
  </div>
@@ -203,6 +287,18 @@
         </div>
     </div>
 </div>
+<div class="collapse" id="collapse-math1-report">
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3> MATH 1 ANSWER PREVIEW </h3>
+                <div id='math1-report'>
+                </div>
+                 
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -214,6 +310,11 @@
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math-2" aria-expanded="true" aria-controls="collapse-math-2">
             Hide/Show
+        </button>
+    </div>
+    <div class="col-sm">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math2-report" aria-expanded="false" aria-controls="collapse-math2-report" id="collapse-math2-report-btn">
+            Show Report
         </button>
     </div>
  </div>
@@ -243,6 +344,19 @@
         </div>
     </div>
   </div>
+<div class="collapse" id="collapse-math2-report">
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3> MATH 2 ANSWER PREVIEW </h3>
+                <div id='math2-report'>
+                </div>
+                 
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 
 <div class="container">
