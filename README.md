@@ -4,8 +4,8 @@
 https://sat-diagnostic-tool.herokuapp.com/    
 
 ## Run
-$ export FLASK_APP=app.py     
-$ flask run
+$ gunicorn app:app    
+Note Flask server is Seg Faulting sometime while using matplotlib.    
 
 ## Deploy (Quick)
 $ heroku login    

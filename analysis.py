@@ -137,7 +137,7 @@ def calculate_math_score(ans_dict):
 
     # Math concepts
     m_total_concepts = agg_counts_dict(m_ans_df[['concept','concept2']])
-    m_missed_concepts =  agg_counts_dict(m_ans_df.loc[m_ans_df['correct'] == False][['concept','concept2']])
+    m_missed_concepts = agg_counts_dict(m_ans_df.loc[m_ans_df['correct'] == False][['concept','concept2']])
     m_concept_dict =  mk_concept_dict(m_missed_concepts, m_total_concepts)
 
     # Math Difficulty
@@ -146,14 +146,12 @@ def calculate_math_score(ans_dict):
     m_diff_dict = mk_diff_dict(m_missed_diff, m_total_diff)
 
     odict = {
-        'math_score' : score,
-        'math_percentile' : percentile,
-        'math_concepts' : m_concept_dict,
-        'math_difficulty' : m_diff_dict,
+        'math_score': score,
+        'math_percentile': percentile,
+        'math_concepts': m_concept_dict,
+        'math_difficulty': m_diff_dict,
     }
     return(odict)
-
-
 
 def calculate_verbal_score(ans_dict):
     v_ans_df = pd.read_csv(data_assets.get('verbal_ans'))
@@ -176,12 +174,12 @@ def calculate_verbal_score(ans_dict):
 
     # Verbal Concepts
     v_total_concepts = agg_counts_dict(v_ans_df[['concept','concept2']])
-    v_missed_concepts =  agg_counts_dict(v_ans_df.loc[v_ans_df['correct'] == False][['concept','concept2']])
+    v_missed_concepts = agg_counts_dict(v_ans_df.loc[v_ans_df['correct'] == False][['concept','concept2']])
     v_concept_dict =  mk_concept_dict(v_missed_concepts, v_total_concepts)
 
     # Writing Concepts
     w_total_concepts = agg_counts_dict(w_ans_df[['concept','concept2']])
-    w_missed_concepts =  agg_counts_dict(w_ans_df.loc[w_ans_df['correct'] == False][['concept','concept2']])
+    w_missed_concepts = agg_counts_dict(w_ans_df.loc[w_ans_df['correct'] == False][['concept','concept2']])
     w_concept_dict =  mk_concept_dict(w_missed_concepts, w_total_concepts)
 
     # Verbal Difficulty
@@ -190,20 +188,19 @@ def calculate_verbal_score(ans_dict):
     v_diff_dict = mk_diff_dict(v_missed_diff, v_total_diff)
 
     # Writing Difficulty
-    w_missed_diff = dict(w_ans_df.loc[w_ans_df['correct'] == False][['difficulty']].apply(pd.        value_counts)['difficulty'])
+    w_missed_diff = dict(w_ans_df.loc[w_ans_df['correct'] == False][['difficulty']].apply(pd. value_counts)['difficulty'])
     w_total_diff = agg_counts_dict(w_ans_df[['difficulty']])
-    w_diff_dict =  mk_diff_dict(w_missed_diff, w_total_diff)
+    w_diff_dict = mk_diff_dict(w_missed_diff, w_total_diff)
 
     odict = {
-        'verbal_score' : score,
-        'verbal_percentile' : percentile,
-        'reading_concepts' : v_concept_dict,
-        'reading_difficulty' : v_diff_dict,
-        'writing_concepts' : w_concept_dict,
-        'writing_difficulty' : w_diff_dict
+        'verbal_score': score,
+        'verbal_percentile': percentile,
+        'reading_concepts': v_concept_dict,
+        'reading_difficulty': v_diff_dict,
+        'writing_concepts': w_concept_dict,
+        'writing_difficulty': w_diff_dict
     }
     return(odict)
-
 
 
 class ItemTable(Table):
@@ -222,4 +219,3 @@ class Item(object):
 def format_profile_table(diff_dicts):
     table = ItemTable(diff_dicts)
     return(table)
-

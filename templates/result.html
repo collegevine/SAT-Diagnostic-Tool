@@ -1,29 +1,40 @@
 {% from "macros.html" import bs_table with context %}
+{% from "macros.html" import res_header with context %}
 {% extends "layout.html" %}
 {% block content %}
 <div class="container">
+    {{ res_header("Overall Score",0) }}
     <div class="row">
         <div class="col-sm">
             <div class="card">
                 <h3>SAT Score: {{obj.total_score}} out of 1600</h3>
-                <h3>Percentile: {{obj.total_percentile}} / 100</h3>
+                <h3>Percentile: {{obj.total_percentile}}%</h3>
             </div>
         </div>
         <div class="col-sm">
             <div class="card">
-                <h3>Verbal Score: {{obj.verbal_score}} / 800</h3>
-                <h3>Percentile: {{obj.verbal_percentile}} / 100</h3>
+                <h3>Verbal Score: {{obj.verbal_score}} out of 800</h3>
+                <h3>Percentile: {{obj.verbal_percentile}}%</h3>
             </div>
         </div>
         <div class="col-sm">
             <div class="card">
-                <h3>Math Score: {{obj.math_score}} / 800</h3>
-                <h3>Percentile: {{obj.math_percentile}} / 100</h3>
+                <h3>Math Score: {{obj.math_score}} out of 800</h3>
+                <h3>Percentile: {{obj.math_percentile}}%</h3>
             </div>
         </div>
 
     </div>
-
+  {{ res_header("Questions by Difficulty Level",3) }}
+  <div class="row">
+      <div class="col-6">
+          <img src="{{math_plot}}"> 
+      </div>
+      <div class="col-6">
+          <img src="{{verbal_plot}}"> 
+      </div>
+  </div>
+  {{ res_header("How you did on Reading",3) }}
   <div class="row">
       <div class="col-6">
             <div class="card">
@@ -38,6 +49,7 @@
             </div>
       </div>
   </div>
+  {{ res_header("How you did on Writing",3) }}
   <div class="row">
       <div class="col-6">
             <div class="card">
@@ -52,6 +64,7 @@
             </div>
       </div>
   </div>
+  {{ res_header("How you did on Math",3) }}
   <div class="row">
       <div class="col-6">
             <div class="card">
@@ -64,14 +77,6 @@
                 <h3 class="card-title">SAT Math Difficulty</h3>
             {{ bs_table(cols_diff, table.m_diff) }}
             </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-6">
-          <img src="{{math_plot}}"> 
-      </div>
-      <div class="col-6">
-          <img src="{{verbal_plot}}"> 
       </div>
   </div>
 </div>
