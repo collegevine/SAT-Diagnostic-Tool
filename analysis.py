@@ -44,7 +44,10 @@ def fmt_percentage(num,denom):
 
 def fmt_improve(i):
     if isinstance(i,float):
-        return "{0:.1f}".format(i)
+        i = i / 10
+        i = int(round(i,0))
+        i = i * 10
+        return str(i)
     return i
 
 def agg_counts_dict(df):
