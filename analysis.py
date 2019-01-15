@@ -28,6 +28,12 @@ def run_analysis(ans_dict):
     m['total_percentile'] = total_scale_df.loc[total_scale_df['score'] == total_score ]['percentile'].tolist()[0]
     return m
 
+def merge_two_dicts(x, y):
+    """Given two dicts, merge them into a new dict as a shallow copy."""
+    z = x.copy()
+    z.update(y)
+    return z
+
 def lookup_ans(ans_dict, idx, keyword):
     key = f'{keyword}_{idx}'
     return ans_dict.get(key,"")
@@ -35,6 +41,11 @@ def lookup_ans(ans_dict, idx, keyword):
 def fmt_percentage(num,denom):
     x = (num / denom) * 100
     return "{0:.2f}".format(x)
+
+def fmt_improve(i):
+    if isinstance(i,float):
+        return "{0:.2f}".format(i)
+    return i
 
 def agg_counts_dict(df):
     return dict(df.apply(pd.value_counts).fillna(0).apply(sum, axis=1))
@@ -116,6 +127,15 @@ def mk_explain_dict(df,section):
     df['section'] = section
     return df[['section', 'question', 'response', 'answer','explain']].to_dict('records')
 
+def mk_improve_dict(miss, total):
+    print(miss)
+    print(total)
+    total_N = float(sum(total.values()))
+    llist = [{'concept': k, 'improvement': fmt_improve((float(miss.get(k,0))/float(total.get(k,0))) * (float(total.get(k,0))/total_N) * 800) } for k in total.keys() ]
+    newlist = sorted(llist, key = lambda k: float(k['improvement']), reverse=True)
+    print(llist)
+    return newlist
+
 
 def calculate_math_score(ans_dict):
     # MATH 1 Correct answers
@@ -146,6 +166,7 @@ def calculate_math_score(ans_dict):
     m_total_concepts = agg_counts_dict(m_ans_df[['concept','concept2']])
     m_missed_concepts = agg_counts_dict(m_ans_df.loc[m_ans_df['correct'] == False][['concept','concept2']])
     m_concept_dict =  mk_concept_dict(m_missed_concepts, m_total_concepts)
+    m_improve_dict = mk_improve_dict(m_missed_concepts, m_total_concepts)
 
     # Math Difficulty
     m_missed_diff = dict(m_ans_df.loc[m_ans_df['correct'] == False][['difficulty']].apply(pd.value_counts)['difficulty'])
@@ -156,9 +177,11 @@ def calculate_math_score(ans_dict):
         'math_score': score,
         'math_percentile': percentile,
         'math_concepts': m_concept_dict,
-        'math_difficulty': m_diff_dict
+        'math_difficulty': m_diff_dict,
         #'math_explain' : m_expalin_dict
+        'math_improve' : m_improve_dict
     }
+    print("odict")
     return(odict)
 
 def calculate_verbal_score(ans_dict):
@@ -207,6 +230,10 @@ def calculate_verbal_score(ans_dict):
     w_diff_dict = mk_diff_dict(w_missed_diff, w_total_diff)
 
 
+    # Verbal Section Improvement
+    vw_total_concepts = merge_two_dicts(v_total_concepts, w_total_concepts)
+    vw_missed_concepts = merge_two_dicts(v_missed_concepts, w_missed_concepts)
+    vw_improve_dict = mk_improve_dict(vw_missed_concepts, vw_total_concepts)
 
     odict = {
         'verbal_score': score,
@@ -216,23 +243,11 @@ def calculate_verbal_score(ans_dict):
         'reading_explain' : v_explain_dict,
         'writing_concepts': w_concept_dict,
         'writing_difficulty': w_diff_dict,
-        'writing_explain' : w_explain_dict
+        'writing_explain' : w_explain_dict,
+        'verbal_improve' : vw_improve_dict
     }
     return(odict)
 
-
-class ItemTable(Table):
-    concept = Col('Item')
-    pct = Col('percent')
-    wrong = Col('wrong')
-    total = Col('total')
-
-class Item(object):
-    def __init__(self, concept, pct, wrong, total):
-        self.concept = concept
-        self.pct = pct
-        self.wrong = wrong
-        self.total = total
 
 def format_profile_table(diff_dicts):
     table = ItemTable(diff_dicts)

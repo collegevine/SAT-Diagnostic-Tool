@@ -34,6 +34,16 @@
           <img src="{{verbal_plot}}"> 
       </div>
   </div>
+  <div class="row">
+      <div class="col">
+        {{ res_header("Math Concept Improvement",3) }}
+        {{ bs_table(cols_improve, table.m_improve) }}
+      </div>
+      <div class="col">
+        {{ res_header("Verbal Concept Improvement",3) }}
+        {{ bs_table(cols_improve, table.v_improve) }}
+      </div>
+  </div>
   {{ res_header("How you did on Reading",3) }}
   <div class="row">
       <div class="col-6">

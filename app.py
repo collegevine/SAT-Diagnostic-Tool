@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, send_from_directory
-from analysis import calculate_math_score, calculate_verbal_score, run_analysis, format_profile_table, plot_verbal, plot_math
+from analysis import calculate_math_score, calculate_verbal_score, run_analysis, plot_verbal, plot_math
 
 import os
 
@@ -17,7 +17,6 @@ def success():
     try:
         if request.method == 'POST':
             obj = run_analysis(request.form)
-
             tables = {
                     'm_diff' : obj.get('math_difficulty'),
                     'm_concept' : obj.get('math_concepts'),
@@ -27,6 +26,8 @@ def success():
                     'w_concept' : obj.get('writing_concepts'),
                     'r_explain' : obj.get('reading_explain'),
                     'w_explain' : obj.get('writing_explain'),
+                    'm_improve' : obj.get('math_improve'),
+                    'v_improve' : obj.get('verbal_improve')
             }
 
             verbal_plot = plot_verbal(obj)
@@ -38,8 +39,10 @@ def success():
                     cols_concept = ['', 'Concept', 'Wrong', 'Percent of Total Test Questions'],
                     cols_diff = ['','Question Level Difficulty', 'Wrong', 'Percent of Total Questions'],
                     cols_explain = ['', 'Section','Question','Your Answer', 'Correct Answer', 'Explaination'],
+                    cols_improve = ['', 'Concept', 'Possible Score Increase'],
                     verbal_plot = verbal_plot,
                     math_plot = math_plot)
+            print('plots done')
 
         else:
             pass
