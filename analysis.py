@@ -44,7 +44,7 @@ def fmt_percentage(num,denom):
 
 def fmt_improve(i):
     if isinstance(i,float):
-        return "{0:.2f}".format(i)
+        return "{0:.1f}".format(i)
     return i
 
 def agg_counts_dict(df):
