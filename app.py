@@ -24,7 +24,9 @@ def success():
                     'r_diff' : obj.get('reading_difficulty'),
                     'r_concept': obj.get('reading_concepts'),
                     'w_diff' : obj.get('writing_difficulty'),
-                    'w_concept' : obj.get('writing_concepts')
+                    'w_concept' : obj.get('writing_concepts'),
+                    'r_explain' : obj.get('reading_explain'),
+                    'w_explain' : obj.get('writing_explain'),
             }
 
             verbal_plot = plot_verbal(obj)
@@ -35,6 +37,7 @@ def success():
                     obj = obj,
                     cols_concept = ['', 'Concept', 'Wrong', 'Percent of Total Test Questions'],
                     cols_diff = ['','Question Level Difficulty', 'Wrong', 'Percent of Total Questions'],
+                    cols_explain = ['', 'Section','Question','Your Answer', 'Correct Answer', 'Explaination'],
                     verbal_plot = verbal_plot,
                     math_plot = math_plot)
 

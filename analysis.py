@@ -63,7 +63,6 @@ def make_file():
 
 
 def plot_math(dicts):
-    print("math")
     df = pd.DataFrame.from_dict(dicts.get('math_difficulty'))
     df = df.sort_values(['difficulty'])
 
@@ -84,11 +83,9 @@ def plot_math(dicts):
 
 
 def plot_verbal(dicts):
-    print("verbal")
     v = pd.DataFrame.from_dict(dicts.get('reading_difficulty'))[['difficulty', 'wrong']]
     w = pd.DataFrame.from_dict(dicts.get('writing_difficulty'))[['difficulty', 'wrong']]
     m = pd.merge(v,w, on='difficulty')
-    print('merge')
     m['wrong'] = m.apply(lambda row: row['wrong_x'] + row['wrong_y'],axis=1)
     df = m.sort_values(['difficulty'])
 
@@ -115,15 +112,22 @@ def mk_concept_dict(miss, total):
 def mk_diff_dict(miss, total):
     return [{'difficulty': k, 'wrong': miss.get(k,0), 'pct' : fmt_percentage(miss.get(k,0), sum(total.values())) }  for k in total.keys()]
 
+def mk_explain_dict(df,section):
+    df['section'] = section
+    return df[['section', 'question', 'response', 'answer','explain']].to_dict('records')
+
+
 def calculate_math_score(ans_dict):
     # MATH 1 Correct answers
     m1_ans_df = pd.read_csv(data_assets.get('math1_ans'))
     m1_ans_df['correct'] = m1_ans_df.apply(lambda row: qeq(str(lookup_ans(ans_dict, int(row['question']), 'math1')), row['answer']), axis=1)
+    m1_ans_df['response'] = m1_ans_df.apply(lambda row: str(lookup_ans(ans_dict, int(row['question']), 'math1')), axis=1)
     m1_num_correct = sum(m1_ans_df['correct'])
 
     # Math 2 correct ansers
     m2_ans_df = pd.read_csv(data_assets.get('math2_ans'))
     m2_ans_df['correct'] = m2_ans_df.apply(lambda row: qeq(str(lookup_ans(ans_dict, int(row['question']), 'math2')), row['answer']), axis=1)
+    m2_ans_df['response'] = m2_ans_df.apply(lambda row: str(lookup_ans(ans_dict, int(row['question']), 'math2')), axis=1)
     m2_num_correct = sum(m2_ans_df['correct'])
 
     # Math (Comb) Score & Percentile
@@ -134,6 +138,9 @@ def calculate_math_score(ans_dict):
 
     # Match combined df
     m_ans_df = pd.concat([m1_ans_df, m2_ans_df])
+
+    # Math Combined Incorrect Explainations
+    #m_expalin_dict = mk_explain_dict(m_ans_df.loc[m_ans_df['correct'] == False], 'Math')
 
     # Math concepts
     m_total_concepts = agg_counts_dict(m_ans_df[['concept','concept2']])
@@ -149,18 +156,25 @@ def calculate_math_score(ans_dict):
         'math_score': score,
         'math_percentile': percentile,
         'math_concepts': m_concept_dict,
-        'math_difficulty': m_diff_dict,
+        'math_difficulty': m_diff_dict
+        #'math_explain' : m_expalin_dict
     }
     return(odict)
 
 def calculate_verbal_score(ans_dict):
     v_ans_df = pd.read_csv(data_assets.get('verbal_ans'))
     v_ans_df['correct'] = v_ans_df.apply(lambda row: lookup_ans(ans_dict, row['question'], 'verbal') == row['answer']  , axis=1)
+    v_ans_df['response'] = v_ans_df.apply(lambda row: str(lookup_ans(ans_dict, int(row['question']), 'verbal')), axis=1)
     verbal_num_correct = sum(v_ans_df['correct'])
 
     w_ans_df = pd.read_csv(data_assets.get('writing_ans'))
     w_ans_df['correct'] = w_ans_df.apply(lambda row: lookup_ans(ans_dict, row['question'], 'writing') == row['answer']  , axis=1)
+    w_ans_df['response'] = w_ans_df.apply(lambda row: str(lookup_ans(ans_dict, int(row['question']), 'writing')), axis=1)
     writing_num_correct = sum(w_ans_df['correct'])
+
+    # V/W Combined Incorrect Explainations
+    w_explain_dict = mk_explain_dict(w_ans_df.loc[w_ans_df['correct'] == False], 'Writing')
+    v_explain_dict = mk_explain_dict(w_ans_df.loc[w_ans_df['correct'] == False], 'Reading')
 
     v_score_df = pd.read_csv(data_assets.get('verbal_score'))
     verbal_raw_score = v_score_df.loc[v_score_df['correct_ans'] == verbal_num_correct]['reading_raw_score'].tolist()[0]
@@ -192,13 +206,17 @@ def calculate_verbal_score(ans_dict):
     w_total_diff = agg_counts_dict(w_ans_df[['difficulty']])
     w_diff_dict = mk_diff_dict(w_missed_diff, w_total_diff)
 
+
+
     odict = {
         'verbal_score': score,
         'verbal_percentile': percentile,
         'reading_concepts': v_concept_dict,
         'reading_difficulty': v_diff_dict,
+        'reading_explain' : v_explain_dict,
         'writing_concepts': w_concept_dict,
-        'writing_difficulty': w_diff_dict
+        'writing_difficulty': w_diff_dict,
+        'writing_explain' : w_explain_dict
     }
     return(odict)
 

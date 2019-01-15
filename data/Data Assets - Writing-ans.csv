@@ -1,45 +1,223 @@
-question,answer,difficulty,concept,concept2
-1,D,1,Adverb Usage,
-2,B,3,"Repetition, Incorrect Words, and Idioms",
-3,C,4,Parallel Structure,
-4,B,3,Clauses and Independence,
-5,D,2,Enhanced Writing Quality,
-6,A,3,Enhanced Writing Quality,
-7,B,3,Homophones,
-8,C,1,Verb Tenses,
-9,A,3,"Repetition, Incorrect Words, and Idioms",
-10,C,4,Enhanced Writing Quality,
-11,A,3,Clauses and Independence,
-12,A,4,Enhanced Writing Quality,
-13,D,3,Phrases,Clauses and Independence
-14,C,5,Phrases,Unclear Sentences
-15,C,3,Enhanced Writing Quality,
-16,A,2,Pronouns and Noun Substitutes,
-17,D,4,Unclear Sentences,False Comparisons
-18,B,2,Enhanced Writing Quality,
-19,A,4,Enhanced Writing Quality,
-20,B,3,Apostrophes and Contractions,Pronouns and Noun Substitutes
-21,B,4,Objects vs. Subjects,
-22,D,4,Enhanced Writing Quality,
-23,A,4,"Repetition, Incorrect Words, and Idioms",
-24,C,4,Parallel Structure,
-25,C,3,Enhanced Writing Quality,
-26,A,4,"Repetition, Incorrect Words, and Idioms",
-27,C,3,"Repetition, Incorrect Words, and Idioms",False Comparisons
-28,B,4,Enhanced Writing Quality,
-29,B,5,Enhanced Writing Quality,Clauses and Independence
-30,B,5,Enhanced Writing Quality,Phrases
-31,B,2,Adverb Usage,
-32,D,4,Parallel Structure,
-33,D,4,Enhanced Writing Quality,
-34,B,2,Adverb Usage,
-35,D,4,"Repetition, Incorrect Words, and Idioms",
-36,A,3,"Repetition, Incorrect Words, and Idioms",
-37,A,3,Subject-Verb Agreement,Parallel Structure
-38,D,5,Unclear Sentences,"Repetition, Incorrect Words, and Idioms"
-39,B,5,Enhanced Writing Quality,
-40,D,4,Phrases,Clauses and Independence
-41,A,4,Enhanced Writing Quality,
-42,D,5,Verb Tenses,"Repetition, Incorrect Words, and Idioms"
-43,A,4,"Repetition, Incorrect Words, and Idioms",
-44,C,5,Phrases,Clauses and Independence
+question,answer,difficulty,concept,concept2,explain
+1,D,1,Adverb Usage,,"Choice D is best. The word  “severity” means gravity or extremity of a condition, which fits the discussion of the obesity epidemic.
+
+It’s NOT Choice A because “propensity” means a natural tendency to behave in a particular way.
+It’s NOT Choice B because “intensity” means the quality of being intense.
+It’s NOT Choice C because “inclination” person's natural tendency or urge to act or feel in a particular way"
+2,B,3,"Repetition, Incorrect Words, and Idioms",,"Choice B is best. This choice underlines how fast food’s convenience saves people time without adding extraneous details.
+
+It’s NOT Choice A because fast food providing a plethora of culinary choices is not relevant to this paragraph. 
+It’s NOT Choice C because avoiding fast food for health reasons is not relevant to this paragraph.
+It’s NOT Choice D because staying late at the office is too specific."
+3,C,4,Parallel Structure,,"Choice A is best. The phrase “may spend” is appropriate here because there is the possibility of them spending hours cooking.
+
+It’s NOT Choice B because “hour’s” inappropriately uses the possessive form of hour.
+It’s NOT Choice C because the past perfect tense does not fit here. 
+It’s NOT Choice D because the past tense does not fit here and “hour’s” inappropriately uses the possessive form of hour."
+4,B,3,Clauses and Independence,,"Choice C is best. The subject is a list of groups of people, so each item should be separated by a comma. 
+
+It’s NOT Choice A because a colon does not fit here, as it is not preceding a list of explanation.
+It’s NOT Choice B because a semi-colon must separate independent clauses. 
+It’s NOT Choice D because a comma is not needed after the word “and”."
+5,D,2,Enhanced Writing Quality,,"Choice C is best. “This process” refers to “acquiring ingredients at the grocery store and cooking the meal” in sentence 4 and thus must follow it. 
+
+It’s NOT Choice A because it can’t precede sentence 4, since “this process” is stated in sentence 4.
+It’s NOT Choice B because that interrupts the sentences that introduce fast food.
+It’s NOT Choice D because that makes “this process” an incorrect reference to part of sentence 5."
+6,A,3,Enhanced Writing Quality,,"Choice D is best. This sentence serves as a transition into the themes of this paragraph  and sets up the argument, therefore it is needed. 
+
+It’s NOT Choice A the sentence is necessary and does relate to nutrition.
+It’s NOT Choice B because it does not contradict the main point of the passage and is needed. 
+It’s NOT Choice C it does not state another reason why people eat fast food. "
+7,B,3,Homophones,,"Choice B is best. The phrase “act as” shows that these chemicals are addictive agents. 
+
+It’s NOT Choice A because “act like” implies that these chemicals are similar to addictive agents, when they are in fact the addictive agents in fast food. 
+It’s NOT Choice C because the infinitive cannot be used here.
+It’s NOT Choice D because the chemicals are the addictive agents and are not in them."
+8,C,1,Verb Tenses,,"Choice C is best. The phrasing of “is sold” is parallel to “is filled” from earlier in the sentence and also uses the correct present tense of to be. 
+
+It’s NOT Choice A because “sold” is incorrectly in the past tense. 
+It’s NOT Choice B because “selling” is incorrectly in the progressive tense. 
+It’s NOT Choice D because the future tense should not be used here."
+9,A,3,"Repetition, Incorrect Words, and Idioms",,"Choice A is best. The word “additionally” fits logically here as this sentence adds on the last one. 
+
+It’s NOT Choice B because “alternatively” implies that there is a contrast. 
+It’s NOT Choice C because “therefore” implies that this sentence is a logical progression from the first, while it is instead a new detail.
+It’s NOT Choice D because “in conclusion” implies that this sentence is a conclusion, but it is not. "
+10,C,4,Enhanced Writing Quality,,"Choice A is best. The word “satiated” means full, the fact people remain full for less time after eating these foods reinforces their low quality.
+
+It’s NOT Choice B because “hungry” implies that this food would positively stop people from being hungry as opposed to healthier food. 
+It’s NOT Choice C because “better” is too vague.
+
+It’s NOT Choice D because “sufficient” means enough, which is not linked to appetite."
+11,A,3,Clauses and Independence,,"Choice B is best. The comma is needed to separate the dependent that begins the sentence and the independent clause.
+ 
+It’s NOT Choice A because “so there” would turn this sentence into two dependent clauses. 
+It’s NOT Choice C because the comma is necessary when this dependent clause begins the sentence
+It’s NOT Choice D because we cannot separate two dependent clauses with a semicolon."
+12,A,4,Enhanced Writing Quality,,"Choice B is best. “As few as 3,000 rabbits” is correct here as the y-axis is measured in hundreds, and in the winter the rabbit population drops to 3,000 rabbits and less.
+ 
+It’s NOT Choice A because the rabbit population is also above 30 rabbits, since the y axis is measured in hundreds. 
+It’s NOT Choice C because including June 7th doesn’t make sense as this sentence is focused on the rabbit population is winter and is not correct according to the graph. 
+It’s NOT Choice D because the rabbit population never reaches 10,000 rabbits or stay stable for months."
+13,D,3,Phrases,Clauses and Independence,"Choice A is best. “Summer, following” is both grammatically correct and concise.
+ 
+It’s NOT Choice B because Choice A is more concise than this option.
+It’s NOT Choice C because Choice A is more concise than this option.
+It’s NOT Choice D because it omits the word “follow” which changes the meaning of the sentence, and as the second sentence is not an explanation of the first, a  semicolon cannot be used here."
+14,C,5,Phrases,Unclear Sentences,"Choice B is best. The word “however” implies a contrast, which is appropriate as this sentence is a contradiction of what is mentioned in the previous sentences.
+ 
+It’s NOT Choice A because “for example” implies that this sentence is an example of the idea presented in the previous sentences while is is in fact a contradiction. 
+It’s NOT Choice C because “as a result” implies a conclusion.
+It’s NOT Choice D because “furthermore” implies an addition, while these ideas contradict."
+15,C,3,Enhanced Writing Quality,,"Choice C is best. Commas are needed on either side of the phrase when it’s in the middle of the sentence. 
+
+It’s NOT Choice A because that lacks a comma at the end of the phrase.
+It’s NOT Choice B because that lacks a comma at the start of the phrase.
+It’s NOT Choice D because the second comma should follow Vanderbilt at the end of this phrase."
+16,A,2,Pronouns and Noun Substitutes,,"Choice C is best. A colon is correct here as the “factor” directly references “the ‘no wolf’ problem”.
+
+It’s NOT Choice A because independent clauses must follow a semicolon and “the no wolf problem” cannot standalone.
+It’s NOT Choice B because independent clauses must follow a semicolon and  “and it was…” cannot standalone.
+It’s NOT Choice D because the “factor” refers to the problem not being it. "
+17,D,4,Unclear Sentences,False Comparisons,"Choice C is best. The word “which” is correct here because this phrase is necessary to this sentence. 
+
+It’s NOT Choice A because “that” implies that the following phrase is not a necessary part of the sentence.
+It’s NOT Choice B because a comma cannot separate two independent clauses. 
+It’s NOT Choice D because “greatly upset” is in the wrong tense."
+18,B,2,Enhanced Writing Quality,,"Choice A is best. “Settled” is correct because the past tense is correct here and this also matches the tense of “migrated”
+
+It’s NOT Choice B because the present tense should not be used here.
+It’s NOT Choice C because the future tense should not be used here.
+It’s NOT Choice D because the past perfect tense should not be used here."
+19,A,4,Enhanced Writing Quality,,"Choice D is best. “Their” is correct here because the possession is needed and we are referring to both the settler and sheep populations so plural is necessary. 
+
+It’s NOT Choice A because “it’s” mean “it is” which does not fit here.
+It’s NOT Choice B because the pronoun needs to be plural. 
+It’s NOT Choice C because there is an incorrect homophone of “their”."
+20,B,3,Apostrophes and Contractions,Pronouns and Noun Substitutes,"Choice D is best. This choice is correct because it causally follows the first half of the sentence. 
+
+It’s NOT Choice A because the spear grass is directly a cause (not related) to the decline of the rabbit population. 
+It’s NOT Choice B because the rabbit population should be declining not growing.
+It’s NOT Choice C because we would not conclude that the rabbit population is being restored from a sentence discussing declining rabbit populations."
+21,B,4,Objects vs. Subjects,,"Choice B is best. “Itself” is the most concise and least redundant. 
+
+It’s NOT Choice A because the word “again” is redundant with the word “repeat”.
+It’s NOT Choice C because “with decline in rabbit population” is implied with the pattern repeating.
+It’s NOT Choice D because “possibly” is redundant with “may”."
+22,D,4,Enhanced Writing Quality,,"Choice D is best. The “investigation” is referring to the next steps in sentence four and thus this sentence must follow sentence four. 
+
+It’s NOT Choice A because the “investigation” is mentioned earlier in the passage. 
+It’s NOT Choice B because the “investigation” is not mentioned until later in the passage.
+It’s NOT Choice C because the “investigation” is not mentioned until later in the passage. "
+23,A,4,"Repetition, Incorrect Words, and Idioms",,"Choice D is best. The future tense “will tumble” accurately explains why the narrator is paranoid that an action might occur in the future. 
+
+It’s NOT Choice A because “tumbles” is present tense and cannot be used to describe an action that has not occured. 
+It’s NOT Choice B because similar to Choice A, “accidentally tumbles” is present tense.
+It’s NOT Choice C because “should tumble accidentally” is a conditional tense instead of future tense. "
+24,C,4,Parallel Structure,,"Choice D is best. This is a case of tricky subjects. The subject of the independent clause that follows the phrase “Having exhausted all other options” should be connected to the narrator himself or herself. He or she is the one who had exhausted all other options, and not any other object. Choice D is the only answer choice that has “I” as the subject. 
+
+It’s NOT Choice A because “wearable technology” is the subject here and wearable technology cannot be the one “having exhausted all other options”. 
+It’s NOT Choice B because “wearable technology” is the subject here and wearable technology cannot be the one “having exhausted all other options”.
+It’s NOT Choice C because “my runs” is the subject here and the runs cannot be the one “having exhausted all other options”."
+25,C,3,Enhanced Writing Quality,,"Choice B is best. When referring to an event that occured during a particular year the preposition “in” is most suitable. 
+
+It’s NOT Choice A because the preposition “into” is more suited in a context where there is physical movement towards something, as opposed to describing when an event happened.
+It’s NOT Choice C because the preposition “for” is used to describe a purpose of an action, as opposed to describing when an event happened.
+It’s NOT Choice D because “until” is used to describe the extent in which an event happened before an interruption, as opposed to describing when an event happened. "
+26,A,4,"Repetition, Incorrect Words, and Idioms",,"Choice A is best. The use of a colon is correct in this case because the first part of the sentence leads into a list of the types of Apple watch versions. When listing items, colons are the most appropriate. 
+
+It’s NOT Choice B because the lack of any punctuation combining the two sentences creates a run-on sentence.
+It’s NOT Choice C because a comma cannot be used to separate an independent clause from a list.
+It’s NOT Choice D because an exclamation mark cannot be used to separate an independent clause from a list."
+27,C,3,"Repetition, Incorrect Words, and Idioms",False Comparisons,"Choice B is best. The type of transition that is most appropriate here is an “addition” type, since we move from talking about the types of Apple Watches offered to discussing an additional feature of Apple Watches. “Moreover” is an “addition” transition type. 
+
+It’s NOT Choice A because “by contrast” is a “contrast” transition type, and there is no contrast or conflict of ideas between the ideas in the prior paragraph and the current paragraph.
+It’s NOT Choice C because “for these reasons” is a “conclusion” transition type, and the ideas in the current paragraph do not summarize or relate directly from the ideas in the prior paragraph. The ability to change the watch’s case and band is an additional feature of Apple Watches that is separate from the different types that are offered. 
+It’s NOT Choice D because “similarly” suggests that the ideas in the current paragraph are related to the different types of Apple Watches, as opposed to introducing an additional feature of them."
+28,B,4,Enhanced Writing Quality,,"Choice A is best. The sentence should be deleted because the sentence introduces a new idea that is not elaborated on in the future, which makes it out of place as a transition between the sentences it proceeds or precedes. 
+
+It’s NOT Choice B because while this sentence should be deleted, it does not provide any contradictory information.
+It’s NOT Choice C because while the sentence provides additional details about the Apple Watch, these details are not necessarily relevant to the rest of the passage.
+It’s NOT Choice D because this sentence does not summarize the paragraph’s argument; rather, it introduces a new idea."
+29,B,5,Enhanced Writing Quality,Clauses and Independence,"Choice B is best. The context of the paragraph is primarily focused on the fitness functionality of smartwatches. Choice B also focuses on the fitness aspect of the data given.
+
+It’s NOT Choice A because the data given in Choice A focused on the GPS and navigation features of smartwatches, which is not aligned with the fitness-focused context.
+It’s NOT Choice C because the data given in Choice A focused on the social media features of smartwatches, which is not aligned with the fitness-focused context.
+It’s NOT Choice D because the data given in Choice A focused on the environmental data features of smartwatches, which is not aligned with the fitness-focused context."
+30,B,5,Enhanced Writing Quality,Phrases,"Choice D is best. “Those” is a subject so that the use of “who”, rather than “whom” is most appropriate here. 
+
+It’s NOT Choice A because the underlined part doesn’t align well with the subsequent context. A possessive pronoun like “whose” should have ownership over an object, followed by a verb, rather than a subsequent prepositional phrase. 
+It’s NOT Choice B because “whose” should be followed by a noun, and it is followed by a verb in this case.
+It’s NOT Choice C because “whom” is only used to refer to the object of a verb or preposition. In this case, “those” is a subject and “it” is the object."
+31,B,2,Adverb Usage,,"Choice C is best. The sentence describes the process of testing out the device, so it should follow the setup of describing how the device was acquired but before any evaluation of the experience. 
+
+It’s NOT Choice A because this sentence cannot be placed before the description of the acquisition of the watch. 
+It’s NOT Choice B because this sentence cannot be placed before the description of the acquisition of the watch. 
+It’s NOT Choice D because sentence 3 is an evaluation of the experience and this sentence describes the experience process, so it should go before sentence 3."
+32,D,4,Parallel Structure,,"Choice A is best. This choice accurately separates the prepositional clause from the rest of the sentence with a comma. 
+
+It’s NOT Choice B because colons are usually used to transition an independent clause to a list or an explanation of an idea. This case is neither of those situations.
+It’s NOT Choice C because the phrase following the semicolon is not an independent clause, which is a prerequisite of the semicolon use (both clauses before and after should be independent clauses).
+It’s NOT Choice D because separating the sentence into two sentence makes the second part a dependent clause and not a full sentence."
+33,D,4,Enhanced Writing Quality,,"Choice A is best. Staple indicates that the watch is something that can be integrated into everyday life seamlessly, which is the intention here.
+
+It’s NOT Choice B because the smartwatch is the subject and is singular, so it cannot be referred to by “staples”, which is plural. 
+It’s NOT Choice C because necessity has a connotation that people are unable to live without the watch, whereas the purpose is to describe the watch as something that can merge into everyday life.
+It’s NOT Choice D because bane refers to something that is burdensome and painful, whereas the context of describing the watch here is that it is an important and indispensable part of everyday life. "
+34,B,2,Adverb Usage,,"Choice A is best. “Essentially” works the best here because the transition from the previous sentence to the current one is to describe buffet-style streaming and what it “essentially” entails.
+
+It’s NOT Choice B because the current sentence is not an example of buffet-style streaming, but rather, an elaboration of what this concept actually is.
+It’s NOT Choice C because “alternatively” suggests that this current sentence describes a different style of streaming but it continues to elaborate on buffet-style streaming.
+It’s NOT Choice D because “even so” suggests that there is some degree of contrast between the previous sentence and the current - the current sentence, however, is merely an elaboration of the previous one."
+35,D,4,"Repetition, Incorrect Words, and Idioms",,"Choice A is best. This is the most concise choice that still maintains the sentence’s contextual intention. 
+
+It’s NOT Choice B because this choice is long, needlessly complicated, and borderline grammatically incorrect
+It’s NOT Choice C because it is already clear from earlier in the paragraph that this sentence is referring to streaming. Some students pick this answer because they believe it offers additional information but it is too redundant and lengthy.
+It’s NOT Choice D because this choice is only a less concise way to say exactly the same thing"
+36,A,3,"Repetition, Incorrect Words, and Idioms",,"Choice B is best. “Services” is plural, so it requires a plural verb form for subject-verb agreement. “Offer” is the plural tense. 
+
+It’s NOT Choice A because “offers” is the singular tense, which doesn’t align with the plural tense of “services”.
+It’s NOT Choice C because “to offer” is in infinite form rather than present tense form.
+It’s NOT Choice D because “offering” requires a helping verb to connect it directly with a subject."
+37,A,3,Subject-Verb Agreement,Parallel Structure,"Choice C is best. The overall tone of the paragraph is more negative and pensive about the future of the transition for the music industry. Choice C accurately depicts the result of the plummeting sales peak: aspiring musicians are becoming less and less optimistic about the financial future of this industry.
+
+It’s NOT Choice A because this choice focuses on the shift to performances over online recordings, whereas the paragraph focused more on the negative commercial future of the digital era of music.
+It’s NOT Choice B because the paragraph does not talk about the increase in revenue - rather, there has been a decrease in revenues. 
+It’s NOT Choice D because the sentence does not serve as a summary of the paragraph, but instead, is more of an additional detail. Furthermore, “nevertheless” is a contrast transition type, and the content is an additional detail, not a contrasting detail."
+38,D,5,Unclear Sentences,"Repetition, Incorrect Words, and Idioms","Choice C is best. In spite of a decline, the recent trends appear promising, indicating that a contrast transition type is necessary here. “Despite” is the only contrast type.
+
+It’s NOT Choice A because “within the” suggests that the recent trends are embedded within the larger theme of the overall decline, which is incorrect.
+It’s NOT Choice B because “because of” suggests that the recent trends are a result of the overall decline, which is incorrect.
+It’s NOT Choice D because “after” depicts a progression transition type and there is no chronological transition of events here."
+39,B,5,Enhanced Writing Quality,,"Choice A is best. This is the most concise choice that lacks redundancy and fully expresses the idea. 
+
+It’s NOT Choice B because this is grammatically incorrect and “10%” conveys the same information with less.
+It’s NOT Choice C because although this answer is grammatically correct it is a much longer way to say the same thing conveyed by “10%”
+It’s NOT Choice D because this is grammatically incorrect and needlessly long"
+40,D,4,Phrases,Clauses and Independence,"Choice B is best. Proliferation is the subject here and it is a collective singular noun. We are looking for a singular past verb tense here to have subject-verb agreement, and “has bolstered” meets that criteria. 
+
+It’s NOT Choice A because proliferation is singular and “have bolstered” is plural tense.
+It’s NOT Choice C because proliferation is singular and “bolster” is plural tense.
+It’s NOT Choice D because “bolstering” needs a helping verb to connect it with a subject/noun. "
+41,A,4,Enhanced Writing Quality,,"Choice B is best. The preposition here describes “number”, which is referring to the number of listeners. 
+
+
+It’s NOT Choice A because in this case, “number” describes the “interactions” in the preposition, as opposed to the “number of listeners”.
+It’s NOT Choice C because the preposition in this case requires a participial phrase like “interacting” a verb tense like “interact”. 
+It’s NOT Choice D because because in this case, “number” describes the “interactions” in the preposition, as opposed to the “number of listeners”."
+42,D,5,Verb Tenses,"Repetition, Incorrect Words, and Idioms","Choice C is best. The sentence presents information about a topic that is not relevant to the previous paragraph or the new paragraph, so it should not be included. 
+
+It’s NOT Choice A because although the passage’s main point is indeed about the revitalization of the music industry by streaming subscriptions, that is not the focus of this sentence. 
+It’s NOT Choice B because this sentence is not a counterargument of the passage’s common claim.
+It’s NOT Choice D because the sentence is not a contrary argument - it merely introduces irrelevant information."
+43,A,4,"Repetition, Incorrect Words, and Idioms",,"Choice D is best. “That...benefits of collaboration” in this case takes on a subject form, so it is unnecessary to have any preposition or transition word between that and the verb.
+
+It’s NOT Choice A because “That...benefits of collaboration” in this case takes on a subject form, so it is unnecessary to have “which” between that and the verb.
+It’s NOT Choice B because “That...benefits of collaboration” in this case takes on a subject form, so it is unnecessary to have “that” between that and the verb.
+It’s NOT Choice C because “That...benefits of collaboration” in this case takes on a subject form, so it is unnecessary to have “therefore” between that and the verb."
+44,C,5,Phrases,Clauses and Independence,"Choice D is best. The pronoun in this case refers to the consumers, so the appropriate one is “their”. 
+
+It’s NOT Choice A because “our” is not the appropriate pronoun that refers to a plural “other” noun like consumers.
+It’s NOT Choice B because “one’s” is not the appropriate pronoun that refers to a plural noun like consumers. 
+It’s NOT Choice C because “his or her” is not the appropriate pronoun that refers to a plural noun like consumers. "
