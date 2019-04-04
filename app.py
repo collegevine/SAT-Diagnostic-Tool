@@ -13,7 +13,7 @@ def send_img(path):
     return send_from_directory('img', path)
 @app.route('/img-math/<path:path>')
 def send_math(path):
-    return send_from_directory('img', path)
+    return send_from_directory('img-math', path)
 
 @app.route('/SATAnalysis', methods=['POST'])
 def success():
