@@ -1,0 +1,3 @@
+0.3 is correct.
+The key to this question is to make sure that you have your answer in the correct units.
+There are 60 minutes per hour, so you need to multiply the number of hours by 60 and divide 45 miles by the number of minutes. The full equation is \(\frac{45}{60*2.5}=0.3\frac{miles}{minute}\)

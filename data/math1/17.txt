@@ -1,0 +1,9 @@
+24 is correct. Add the expressions:
+$$\begin{align}
+x^2+4x+40   \\
+\underline{+\quad −3x^2-2x-16}& \\
+−2x^2+2x+24&
+\end{align}$$
+</br>
+From this, \(a=−2\), \(b=2\), and \(c=24\), and so \(a+b+c=−2+2+24=24\).
+

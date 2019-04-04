@@ -1,0 +1,13 @@
+24 is correct. Add the expressions:
+$$\begin{align}
+a + 2b = -2.2   \\
+\underline{+\quad -a + 6b = 12.2}& \\
+8b = 10& \\
+b = \frac{10}{8} = \frac{5}{4} \text{ or } 1.24&&
+\end{align}$$
+</br>
+From this, \(a=−2\), \(b=2\), and \(c=24\), and so \(a+b+c=−2+2+24=24\).
+
+
+
+

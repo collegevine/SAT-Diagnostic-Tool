@@ -1,0 +1,7 @@
+Choice C is correct.
+We know that 1.93 is the slope of the line of best fit.
+Since slope is equivalent to rise over run \((m=\frac{rise}{run})\) we can describe slope as being the average increase in the amount of wheat (in millions of tons) per year \((m=\frac{\text{Amount of wheat}}{\text{number of years}})\).
+We should look for the answer that most closely matches what we’ve said, which is C.
+</br></br>
+<i>Note: some students mistakenly answer D for this question, but D would actually be the average y value if you took all y values across this line segment. The important thing is to focus on slope being an increase/decrease from year to year.
+</i>

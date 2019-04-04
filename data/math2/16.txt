@@ -1,0 +1,35 @@
+Choice B is correct.
+The key to these chart questions is to select the categories and data relevant to the question, here they want to know the proportion of seniors <b>who took vitamins</b> that <b>reported pain</b>. Select only the relevant information.
+ <table style="width:100%">
+  <tr>
+    <th></th>
+    <th></b>Pain</b></th>
+    <th>No pain</th>
+    <th><b>Total</b></th>
+  </tr>
+  <tr>
+    <td>Painkiller</td>
+    <td>52</td>
+    <td>148</td>
+    <td>200</td>
+  </tr>
+
+  <tr>
+    <td><b>Vitamin</b> </td>
+    <td><b>28</b></td>
+    <td>172</td>
+    <td><b>200</b></td>
+  </tr>
+
+  <tr>
+    <td>Total</td>
+    <td>80</td>
+    <td>320</td>
+    <td>400</td>
+  </tr>
+
+</table>
+Now to find the proportion you take the number of seniors on vitamins who felt pain and divide it by the total number of seniors on vitamins, which is \(\frac{28}{200}=\frac{7}{50}\) which is B
+
+
+

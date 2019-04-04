@@ -1,0 +1,10 @@
+Choice D is correct.
+This question looks more scary than it is.
+Since you are given the maximum volume the tank can hold, you just plug that into the given volume equation and solve for p.
+</br>
+First take \(355=\frac{5 \pi p^3}{27}\) and rearrange to isolate p, giving you \(\frac{355 \times 27}5 \i{} = p^3\)
+</br>
+From here take the cube root to find p, giving you \(\sqrt[3]{\frac{355 \times 27}{5 \pi}}=p=8.48\), which is D.
+</br>
+<i>Note: many students get confused by the apparent complexity of problems 9-11, this is a good place to encourage students to make sure they take in all information in a word problem/diagram, and then develop the skill of focusing on only the information that is relevant to finding the answer
+</i>

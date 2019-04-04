@@ -1,0 +1,4 @@
+Choice A is correct. We are asked to solve for \(O\) given \(D=\frac{B+3S+O}{4}\).
+</br>Multiply both sides by 4: \(4D=B+3S+O\)
+</br>Isolate \(O\) by subtracting \(B\) and \(3S\) from both sides: \(4D-B-3S=O\),
+which is A!

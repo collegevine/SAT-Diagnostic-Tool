@@ -1,0 +1,1 @@
+Choice D is correct. As the tank fills the area being filled becomes wider, causing it to take more liquid to further increase the height. Because the rate of pouring is held constant, but the same fluid must increase an ever growing area, the height increases more slowly over time causing the curve we see in D.

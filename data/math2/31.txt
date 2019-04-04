@@ -1,0 +1,1 @@
+96 is correct. We do not need to know that there are thirty pages of content, only how many pages of acknowledgements there are (6). Considering there are 16 books, and 6 pages of acknowledgements in each, we multiply 6 by 16 to get our answer, \(6*16=96\)

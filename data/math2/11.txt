@@ -1,0 +1,3 @@
+Choice B is correct.
+We are given that the gas tank can hold approximately 12 fluid ounces, and that Katie’s can contains 6 quarts of gas.
+Since we are also given that 6 quarts = 192 fluid ounces, we divide 192 (amount of gas in Katie’s can) by 12 (maximum capacity of tank) to get our answer, \(192 \div 12=16\), which is B

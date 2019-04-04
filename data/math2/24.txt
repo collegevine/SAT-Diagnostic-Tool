@@ -1,0 +1,6 @@
+Choice D is correct.
+This is a logic question that is testing the student’s ability to assess what they can say from a given set of data.
+Since 60% of those who voted by mail-in voted for candidate 1, and only 20% of those who used in-person ballots voted for candidate 1, it is safe to say that the mail-in voters were more likely to prefer Candidate 1 than the in-person voters.
+</br>
+</br>
+While the other statements could be true, they are not sufficiently supported by the data.

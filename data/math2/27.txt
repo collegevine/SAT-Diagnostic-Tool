@@ -1,0 +1,15 @@
+Choice B is correct. We know that b is a constant, so for this problem we can generate a  system of equations and solve for b.
+We are given that the first equation is \(y=x+b\), and for the second equation we need to plug in the values that are given(7y,3x), so \(7y=3(3x)+b\)
+</br></br>
+Rearranging our first equation, we are left with \(y-x=b\), and rearranging our second we are left with \(7y-9x=b\).
+</br></br>
+Now that both equations are set equal to b, we can set them equal to each other, giving us \(7y-9x=y-x\).
+</br></br>
+Add and subtract to isolate the variables to each side, leaving you with \(6y=8x\)
+</br></br>
+The goal is to get the variables into \(\frac{y}{x}\) form, so we divide x over giving us \(\frac{6y}{x}=8\)
+</br></br>
+Finally, divide the 6 and you are left with your answer \(\frac{y}{x}=\frac{8}{6}=\frac{4}{3}\)
+</br></br>
+<i>Note: This question is testing your ability to think outside of normal circumstances. If using the variables x and y  in the equation is confusing, you can replace those with other variables for your calculations. (Plugging in c and d into \(y=x+b\), for example).
+</i>

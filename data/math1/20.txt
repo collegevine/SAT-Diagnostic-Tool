@@ -1,0 +1,6 @@
+108 is correct.
+∠l is a central angle (formed at the center of the circle by two radii), and its measure corresponds to the minor arc formed by the same radii, arc \(SP\).
+If the length of the arc \(SP\) is \(\frac{3}{10}\) of the circumference, the degree measure of the arc must also be \(\frac{3}{10}\) of the entire circle’s degrees.
+Since we know that circles measure 360°,the measure of this arc is \(\frac{3}{10} \times 360°=108°\), which is also the measure of the central angle \(∠l\).
+</br>
+<img src="img-math/math1_20.png" alt="" border="3" height="300" width="300" />

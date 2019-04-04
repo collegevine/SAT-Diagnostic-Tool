@@ -1,0 +1,1 @@
+Choice B is correct. We can plug in \(6x>5\) straight into \(y \leq 6x-2\),which gives us \(y<5-2y<3\), which is B.

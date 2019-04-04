@@ -1,0 +1,3 @@
+Choice C is correct. In the slope-intercept form \(y=mx+b\), m is equal to slope.
+Of the possible answers, only one gives a value of 4 for m, answer C with \(y=4x+3\).
+Therefore, the answer is C.

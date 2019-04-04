@@ -1,0 +1,5 @@
+Choice C is correct. If landline usage dropped at a constant rate during this period, there must be a linear relationship between time and the use of landlines.
+As the y-intercept is clearly 60 (just glance at the answer choices), we need to find the slope, or values to plug into \(\frac{y_2-y_1}{x_2-x_1}\).
+We can use the information given to derive two “points,” \((2005, 60)\) and \((2014, 32)\), which give \(\frac{60-32}{2014-2005}=289\).
+However, as we know that landline usage decreased at a constant rate, the slope must be negative. Thus, the answer must be \(U(t) =−\frac{28}{9}t+60\), which is C.
+

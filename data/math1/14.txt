@@ -1,0 +1,5 @@
+Choice C is correct. To find solutions, assume that the equations share at least one solution, which means that you should be able to plug the first equation into the second:
+Substitute \(x^2-6x+1\) for y: \(x^2-6x+1+2x=−3\)
+Combine terms to set equal to 0: \(x^2-4x+4 \)
+Factor: \((x-2)^2 \implies x=2\), which is just one solution!
+

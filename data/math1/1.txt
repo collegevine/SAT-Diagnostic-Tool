@@ -1,0 +1,7 @@
+Choice D is correct. We are asked to solve for x, given $$2x + x + x-1-3=6 + x + x.$$
+
+Combine like terms: $$ 4x-4=6+2x .$$
+Subtract 2x from both sides: $$ 2x-4= 6 .$$
+Add 4 to both sides: $$ 2x = 10 .$$
+Divide both sides by 2 to isolate x: $$ x=5 .$$
+which is D

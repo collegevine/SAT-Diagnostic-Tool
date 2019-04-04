@@ -1,0 +1,6 @@
+Choice D is correct.
+Since \(density = \frac{mass}{volume}\), we need to rearrange this equation to solve for mass.
+Multiply both sides by volume, and you have \(density \times volume=mass\).
+</br>
+Plug in your density value of 3.6 ounces per cubic inch, and then we need to solve for volume by multiplying length width and height.
+This gives us the equation \((3.6)(50\times20\times30)=mass=108,000\), which is D

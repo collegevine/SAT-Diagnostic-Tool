@@ -1,0 +1,2 @@
+Choice C is correct. Looking at the graph, you should be estimating the slope of the line for each interval and trying to find the area where the slope is the most negative.
+Between 1 and 3 months there is a slight dip, but the dip between 5 and 7 months is much steeper. For all other intervals the number of shoes increased. Therefore the answer is between <b>5 and 7 months</b>.

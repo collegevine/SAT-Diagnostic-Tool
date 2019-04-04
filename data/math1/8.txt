@@ -1,0 +1,4 @@
+Choice C is correct. Glancing at the answer choices, we know that here, we only need to factor each expression rather than performing long/synthetic division. Begin with \(k(x)\), since it’s merely a quadratic and thus more familiar/friendly: \(\frac{h(x)}{k(x)}=\frac{x^3-4x}{x^2+2x-8}=\frac{x^3-4x}{(x+4)(x-2)}\).
+We now know that we want to factor out either \((x+4)\) or \((x-2)\) from \(h(x)\), so we start by doing what we can to remove the \(4\) from \(4x\): \(\frac{x^3-4x}{(x+4)(x-2)}=\frac{x(x^2-4)}{(x+4)(x-2)}\).
+As we know that expressions in the form \((a2-b2)\) factor out to \((a+b)(a-b)\), \(\frac{x(x^2-4)}{(x+4)(x-2)}=\frac{x(x+2)(x-2)}{(x+4)(x-2)}\), which means \((x-2)\) can be crossed out.
+When we cancel \((x-2)\) we need to remember it is there in the original equation, because when \((x-2)=0\) the original equation becomes undefined. Thus, \(\frac{x(x+2)}{(x+4)}=\frac{x^3-4x}{x^2+2x-8}\) as long as \( x \neq 2 \).

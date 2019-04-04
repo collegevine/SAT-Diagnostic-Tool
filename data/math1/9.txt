@@ -1,0 +1,6 @@
+Choice A is correct. \((x-h)^2+(y-k)^2=r^2\) is the equation of a circle, where \((h,k)\) is the center and ris the radius. Therefore, given the equation \((x-4)^2+(y-3)^2=9\), we know that the center is \((4,3)\) and the radius is 3 units. As we’re dealing with whole numbers here, the best solution is likely drawing a diagram — delineate the axes, add a few notches, label the center \((4,3)\), extend three units out in each cardinal direction, and just connect the dots:
+</br>
+<img src="img-math/math1_9.png" alt="" border="3" height="300" width="400" />
+</br>
+Conveniently, \((4,0)\) is one of the points we used to make our diagram, and we’ll define it as Point \(M\). If \(\overline{MD}\) is a diameter, then it’s obvious that Point \(D\) would be \((4,6)\).
+Choice C identifies the center of the circle, but that’s not what the question is asking! Always read the question carefully.

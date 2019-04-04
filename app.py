@@ -11,6 +11,9 @@ def index():
 @app.route('/img/<path:path>')
 def send_img(path):
     return send_from_directory('img', path)
+@app.route('/img-math/<path:path>')
+def send_math(path):
+    return send_from_directory('img', path)
 
 @app.route('/SATAnalysis', methods=['POST'])
 def success():
@@ -26,12 +29,14 @@ def success():
                     'w_concept' : obj.get('writing_concepts'),
                     'r_explain' : obj.get('reading_explain'),
                     'w_explain' : obj.get('writing_explain'),
+                    'm_explain' : obj.get('math_explain'),
                     'm_improve' : obj.get('math_improve'),
                     'v_improve' : obj.get('verbal_improve')
             }
 
             verbal_plot = plot_verbal(obj)
             math_plot = plot_math(obj)
+            print(tables.get('m_explain'))
 
             return render_template('result.html',
                     table = tables,

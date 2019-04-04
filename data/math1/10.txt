@@ -1,0 +1,9 @@
+Choice C is correct. If we define xas the number of containers that hold 4 balls and yas the number of containers that hold 6 balls, we can create a system of equations: \(x+y=30\) and \(4x+6y=168\).
+ Since we want to solve for \(x\), we can rearrange the first equation to define \(y\) in terms of \(x\): \(y=30-x\).
+ Then, substitute this into the second equation:
+</br>
+Substitute \(30-x\) in for \(y\): \(4x+6(30-x)=168\)
+</br>
+Multiply out the parentheses: \(4x+180-6x=168\)
+</br>
+Combine like terms & isolate \(x\): \(−2x=−12x=12\), which is C.

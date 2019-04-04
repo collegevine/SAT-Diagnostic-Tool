@@ -63,7 +63,7 @@
   <tr>
       <th scope="row"></th>
         {% for key, value in row.items() %}
-      <td>{{ value }}</td> 
+            <td>{{ value|safe }}</td> 
         {% endfor %}
   </tr>
   {% endfor %}

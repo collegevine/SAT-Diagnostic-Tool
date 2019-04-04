@@ -1,0 +1,5 @@
+Choice D is correct. We just need to rearrange \(\frac{3m}{c}=\frac{1}{3}\):
+</br>
+Cross multiply:  \(9m=c\)
+</br>
+Divide both sides by m: \(\frac{c}{m}=9\), which is D.

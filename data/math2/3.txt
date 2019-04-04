@@ -1,0 +1,4 @@
+Choice A is correct.
+First you need to find the proportion of the 175 planes that had a mechanical defect.
+To determine the proportion, divide the 7 faulty planes by the 175 total sample planes, giving you \(7\div 175=0.04\).
+Then multiply the 12500 planes of the same model by the faulty proportion (0.04) to obtain the answer, \(12500 \times 0.04=500\)

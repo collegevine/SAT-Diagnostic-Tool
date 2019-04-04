@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+import os
+from settings import APP_ROOT
 
 
 
@@ -130,13 +132,36 @@ def mk_explain_dict(df,section):
     df['section'] = section
     return df[['section', 'question', 'response', 'answer','explain']].to_dict('records')
 
+
+def get_math_explain(explain_file):
+    if explain_file == "":
+        return ""
+    if not isinstance(explain_file, str):
+        return ""
+
+    local_file = os.path.join(APP_ROOT, explain_file)
+    exists = os.path.isfile(local_file)
+    txt = ""
+    if exists:
+        print('opening: ' + local_file)
+        with open(local_file) as f:
+            txt = f.read()
+        print('...done')
+    return txt
+
+
+def mk_explain_dict_math(df):
+    df_new = df.copy()
+    df_new.loc[:,'explain2'] = df_new.apply(lambda row: get_math_explain(row['explain']), axis=1)
+    df_new.loc[:,'explain'] = df_new['explain2']
+    ddict = df_new[['section', 'question', 'response', 'answer','explain']].to_dict('records')
+    return(ddict)
+
+
 def mk_improve_dict(miss, total):
-    print(miss)
-    print(total)
     total_N = float(sum(total.values()))
     llist = [{'concept': k, 'improvement': fmt_improve((float(miss.get(k,0))/float(total.get(k,0))) * (float(total.get(k,0))/total_N) * 800) } for k in total.keys() ]
     newlist = sorted(llist, key = lambda k: float(k['improvement']), reverse=True)
-    print(llist)
     return newlist
 
 
@@ -160,10 +185,12 @@ def calculate_math_score(ans_dict):
     percentile = int(m_score_df.loc[m_score_df['correct_ans'] == total_correct]['percentile'].tolist()[0])
 
     # Match combined df
-    m_ans_df = pd.concat([m1_ans_df, m2_ans_df])
+    m1_ans_df.loc[:,"section"] = "Math1"
+    m2_ans_df.loc[:,"section"] = "Math2"
+    m_ans_df = pd.concat([m1_ans_df.copy(), m2_ans_df.copy()])
 
     # Math Combined Incorrect Explainations
-    #m_expalin_dict = mk_explain_dict(m_ans_df.loc[m_ans_df['correct'] == False], 'Math')
+    m_explain_dict = mk_explain_dict_math(m_ans_df.loc[m_ans_df['correct'] == False])
 
     # Math concepts
     m_total_concepts = agg_counts_dict(m_ans_df[['concept','concept2']])
@@ -181,10 +208,9 @@ def calculate_math_score(ans_dict):
         'math_percentile': percentile,
         'math_concepts': m_concept_dict,
         'math_difficulty': m_diff_dict,
-        #'math_explain' : m_expalin_dict
+        'math_explain' : m_explain_dict,
         'math_improve' : m_improve_dict
     }
-    print("odict")
     return(odict)
 
 def calculate_verbal_score(ans_dict):
@@ -200,7 +226,7 @@ def calculate_verbal_score(ans_dict):
 
     # V/W Combined Incorrect Explainations
     w_explain_dict = mk_explain_dict(w_ans_df.loc[w_ans_df['correct'] == False], 'Writing')
-    v_explain_dict = mk_explain_dict(w_ans_df.loc[w_ans_df['correct'] == False], 'Reading')
+    v_explain_dict = mk_explain_dict(v_ans_df.loc[v_ans_df['correct'] == False], 'Reading')
 
     v_score_df = pd.read_csv(data_assets.get('verbal_score'))
     verbal_raw_score = v_score_df.loc[v_score_df['correct_ans'] == verbal_num_correct]['reading_raw_score'].tolist()[0]

@@ -1,0 +1,13 @@
+2 or 6 is correct. The easiest way to solve this problem is to plug the two equations into your calculator and then calculate the points of intersection, which will be 2 and 6.
+</br></br>
+Alternatively you can set the two equations equal to each other and attempt to solve that way.
+This would give you \(2(x-3)^2=4x-6\)
+</br></br>
+Factoring out the 2 from the right side of the equation and dividing, you are left with \((x-3)^2=2x-3\)
+</br></br>
+You can then foil out the left side of the equation to give you \(x^2-6x+9=2x-3\)
+</br></br>
+Subtract over the right side to leave you with \(x^2-8x+12=0\)
+</br></br>
+This factors back out to \((x-6)(x-2)=0\), giving you the answers of \(x=2\) and \(x=6\)
+

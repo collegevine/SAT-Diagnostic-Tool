@@ -1,0 +1,9 @@
+Choice B is correct. Start by translating directly:
+</br>
+"The width of the patio is 4 meters longer than its length"
+</br>
+is equivalent to the following:
+<br>
+$$w (\text{or any favorite variable}) =  4 + x.$$
+
+Adding up all the sides (2 lengths and 2 widths) to find the perimeter would then be \(2(4+x)+2x=8+2x+2x=8+4x\), or B.

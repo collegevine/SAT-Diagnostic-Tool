@@ -1,0 +1,1 @@
+Choice B is correct. Since this graph has zeroes at \(x=−2\), \(x=1\) ,and \(x=3\), and the line passes straight through the x-axis at each of its roots, we know that the equation is just \(y=(x+2)(x-1)(x-3)\), which is B. <i>Note: if the line had “bounced” at any of its zeroes, then the factor for that particular root would be \((x-root)^2\).</i>

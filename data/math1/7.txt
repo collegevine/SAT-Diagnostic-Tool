@@ -1,0 +1,19 @@
+Choice C is correct. Given \(\sqrt{x+3}+4=x+7\), we want to solve for x:
+</br>
+Subtract 4 from both sides: \(\sqrt{x+3}=x+3\)
+</br>
+Square both sides to remove the radical and expand: \(x+3=(x+3)^2 \implies x+3=x2+6x+9\)
+</br>
+Subtract x and 3 from both sides: \(x^2+5x+6=0\)
+</br>
+Factor the quadratic (what two numbers that add to 5 and multiply to 6?) to find solutions:
+\((x+2)(x+3) \implies x= −2 \text{ or} −3 \)
+</br>
+Check for extraneous solutions by plugging both into the original equation:
+</br>
+If \(x=−2,−2+3+4=−2+7\) ✔
+</br>
+If \(x=−3,−3+3+4=−3+7\)✔
+</br>
+Thus, \(x=−2,−3\) is correct, which is C.
+

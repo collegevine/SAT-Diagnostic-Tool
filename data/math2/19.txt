@@ -1,0 +1,1 @@
+Choice A is correct. You know the zeroes (x-intercepts) are -2 and 3, which eliminates B as an option immediately. From there you need to consider which graph is never greater than 5. Both graphs C and D have portions of the curve that extend beyond 5, so the answer is A.

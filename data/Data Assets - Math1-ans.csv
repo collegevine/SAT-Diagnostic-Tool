@@ -1,21 +1,21 @@
-question,answer,difficulty,concept,concept2
-1,D,1,Properties of Integers,
-2,A,1,Equation of a Line,
-3,A,1,Properties of Integers,
-4,C,2,Triangles,Interior Angles of a Polygon
-5,B,2,Angles & Lines,
-6,B,1,Systems of Linear Inequalities,
-7,C,2,Complex Equations,Exponents
-8,C,4,"Factors, Multiples & Divisibility",Multiplying Polynomials
-9,A,3,Circles,
-10,C,2,System of Equations,
-11,B,5,Polynomials,Symmetry in Functions
-12,D,2,Reciprocals,
-13,C,2,Definition of Functions,
-14,C,2,Polynomials,System of Equations
-15,D,2,Definition of Functions,
-16,5,2,Quadratic Equations,
-17,24,2,Quadratic Equations,
-18,1.25,2,System of Equations,
-19,4,2,Definition of Functions,Equation of a Line
-20,108,4,Circles,
+question,answer,difficulty,concept,concept2,explain
+1,D,1,Properties of Integers,,"data/math1/1.txt"
+2,A,1,Equation of a Line,,"data/math1/2.txt"
+3,A,1,Properties of Integers,,"data/math1/3.txt"
+4,C,2,Triangles,Interior Angles of a Polygon,"data/math1/4.txt"
+5,B,2,Angles & Lines,,"data/math1/5.txt"
+6,B,1,Systems of Linear Inequalities,,"data/math1/6.txt"
+7,C,2,Complex Equations,Exponents,"data/math1/7.txt"
+8,C,4,"Factors, Multiples & Divisibility",Multiplying Polynomials,"data/math1/8.txt"
+9,A,3,Circles,,"data/math1/9.txt"
+10,C,2,System of Equations,,"data/math1/10.txt"
+11,B,5,Polynomials,Symmetry in Functions,"data/math1/11.txt"
+12,D,2,Reciprocals,,"data/math1/12.txt"
+13,C,2,Definition of Functions,,"data/math1/13.txt"
+14,C,2,Polynomials,System of Equations,"data/math1/14.txt"
+15,D,2,Definition of Functions,,"data/math1/15.txt"
+16,5,2,Quadratic Equations,,"data/math1/16.txt"
+17,24,2,Quadratic Equations,,"data/math1/17.txt"
+18,1.25,2,System of Equations,,"data/math1/18.txt"
+19,4,2,Definition of Functions,Equation of a Line,"data/math1/19.txt"
+20,108,4,Circles,,"data/math1/20.txt"
