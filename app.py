@@ -36,8 +36,7 @@ def success():
 
             verbal_plot = plot_verbal(obj)
             math_plot = plot_math(obj)
-            print(tables.get('m_explain'))
-
+            print(request.form)
             return render_template('result.html',
                     table = tables,
                     obj = obj,
@@ -47,7 +46,6 @@ def success():
                     cols_improve = ['', 'Concept', 'Possible Score Increase'],
                     verbal_plot = verbal_plot,
                     math_plot = math_plot)
-            print('plots done')
 
         else:
             pass

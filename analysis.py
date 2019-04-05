@@ -8,7 +8,6 @@ import os
 from settings import APP_ROOT
 
 
-
 data_assets = {
     'math1_ans' : './data/Data Assets - Math1-ans.csv',
     'math2_ans' : './data//Data Assets - Math2-ans.csv',
@@ -27,6 +26,11 @@ def run_analysis(ans_dict):
     m.update(v)
     total_score = m.get('math_score') + v.get('verbal_score')
     m['total_score'] = total_score
+    m['math_score'] = m.get('math_score')
+    m['verbal_score'] = m.get('verbal_score')
+    m['math_question_percent'] = m.get('math_q_percent')
+    m['reading_question_percent'] = m.get('verbal_question_percent')
+    m['writing_question_percent'] = m.get('writing_question_percent')
     m['total_percentile'] = total_scale_df.loc[total_scale_df['score'] == total_score ]['percentile'].tolist()[0]
     return m
 
@@ -143,10 +147,8 @@ def get_math_explain(explain_file):
     exists = os.path.isfile(local_file)
     txt = ""
     if exists:
-        print('opening: ' + local_file)
         with open(local_file) as f:
             txt = f.read()
-        print('...done')
     return txt
 
 
@@ -181,6 +183,8 @@ def calculate_math_score(ans_dict):
     # Math (Comb) Score & Percentile
     m_score_df = pd.read_csv(data_assets.get('math_chart'))
     total_correct = m1_num_correct + m2_num_correct
+    math_q_percent = int(total_correct / (38+20))
+
     score = int(m_score_df.loc[m_score_df['correct_ans'] == total_correct]['score'].tolist()[0])
     percentile = int(m_score_df.loc[m_score_df['correct_ans'] == total_correct]['percentile'].tolist()[0])
 
@@ -209,7 +213,8 @@ def calculate_math_score(ans_dict):
         'math_concepts': m_concept_dict,
         'math_difficulty': m_diff_dict,
         'math_explain' : m_explain_dict,
-        'math_improve' : m_improve_dict
+        'math_improve' : m_improve_dict,
+        'math_q_percent': math_q_percent
     }
     return(odict)
 
@@ -233,6 +238,8 @@ def calculate_verbal_score(ans_dict):
     writing_raw_score = int(v_score_df.loc[v_score_df['correct_ans'] == writing_num_correct]['writing_raw_score'].tolist()[0])
 
     v_scale_df = pd.read_csv(data_assets.get('verbal_scale'))
+    verbal_question_percent = int(verbal_raw_score / 52)
+    writing_question_percent = int(writing_raw_score / 44)
     raw_score = verbal_raw_score + writing_raw_score
 
     score = int(v_scale_df.loc[v_scale_df['raw'] == raw_score ]['score'].tolist()[0])
@@ -273,7 +280,9 @@ def calculate_verbal_score(ans_dict):
         'writing_concepts': w_concept_dict,
         'writing_difficulty': w_diff_dict,
         'writing_explain' : w_explain_dict,
-        'verbal_improve' : vw_improve_dict
+        'verbal_improve' : vw_improve_dict,
+        'verbal_question_percent' : verbal_question_percent,
+        'writing_question_percent' : writing_question_percent
     }
     return(odict)
 

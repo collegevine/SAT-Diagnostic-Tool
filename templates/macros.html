@@ -89,3 +89,88 @@
        </div>
    </div>
 {% endmacro %}
+
+
+{% macro course_rec(n) %}
+{% if n < 1450 %}
+ Comprehensive
+{% elif n < 1520 %}
+ Success
+{% elif n < 1570 %}
+ Crash
+{% endif %}
+{% endmacro %}
+
+
+{% macro pick_test_low(m,r,w) %}
+{% if (m < r) and (m < w) %}
+    Math
+{% elif (r < m) and (r < w) %}
+    Reading
+{% elif (w < m) and (w < m) %}
+    Writing
+{% endif %}
+{% endmacro %}
+
+{% macro pick_test_high(m,r,w) %}
+{% if (m > r) and (m > w) %}
+    Math
+{% elif (r > m) and (r > w) %}
+    Reading
+{% elif (w > m) and (w > m) %}
+    Writing
+{% endif %}
+{% endmacro %}
+
+{% macro pick_nonmatch(m,r,w) %}
+{% if (r == w) %}
+    Math
+{% elif (m == w) %}
+    Reading
+{% elif (r == m) %}
+    Writing
+{% endif %}
+{% endmacro %}
+
+{% macro pick_eq(m,r,w) %}
+{% if (r == w) %}
+    Reading, Writing
+{% elif (r == m) %}
+    Reading, Math
+{% elif (m == w) %}
+    Math, Writing
+{% endif %}
+{% endmacro %}
+
+{% macro para2_sent1(n) %}
+{% if n < 1390 %}
+    Your performance on this exam is a good start, but you have plenty of room for growth by learning various test strategies and taking additional practice exams.
+{% elif n < 1540 %}
+    You are already in a really good place with your score on this diagnostic, but some targeted strategy work and additional practice can really help take your score to the next level.
+{% elif n < 1590 %}
+    Your performance on the diagnostic was already excellent, but if you still want to boost your score there are a few highly targeted strategies that you can use. And of course every student benefits from taking additional practice tests.
+{% endif %}
+{% endmacro %}
+
+
+{% macro para2_sent2(m,r,w) %}
+{% if (m != w and m != r) %}
+   As you can tell from these numbers, the {{ pick_test_high(m,r,w) }}  section is certainly your strength with the most room for improvement in {{ pick_test_low(m,r,w) }} 
+{% elif ((m == w and r < w) or (m == r and w < r) or (r == w and m < r)) %}
+   As you can tell from these numbers, the {{ pick_eq(m,r,w) }} sections are certainly your strength with the most room for improvement in {{ pick_test_low(m,r,w)  }} 
+{% elif ((m == w and r > w) or (m == r and w > r) or (r == w and m > r)) %}
+   As you can tell from these numbers, the {{ pick_test_high(m,r,w) }} sections is certainly your strength with the most room for improvement in {{ pick_eq(m,r,w)  }} 
+{% elif (m == w and r == m) %}
+  As you can tell, the student has pretty similar performance accross each of the three test sections 
+{% endif %}
+{% endmacro %}
+
+
+                  
+
+
+
+
+
+
+
