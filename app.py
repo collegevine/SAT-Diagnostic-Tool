@@ -31,12 +31,18 @@ def success():
                     'w_explain' : obj.get('writing_explain'),
                     'm_explain' : obj.get('math_explain'),
                     'm_improve' : obj.get('math_improve'),
-                    'v_improve' : obj.get('verbal_improve')
+                    'v_improve' : obj.get('verbal_improve'),
+                    'v_best_concepts' : obj.get('verbal_best_concepts'),
+                    'm_best_concepts' : obj.get('math_best_concepts'),
+                    'v_worst_concepts' : obj.get('verbal_worst_concepts'),
+                    'm_worst_concepts' : obj.get('math_worst_concepts'),
+                    'm_improve_stmt' : obj.get('math_improve_stmt'),
+                    'v_improve_stmt' : obj.get('verbal_improve_stmt'),
             }
 
             verbal_plot = plot_verbal(obj)
             math_plot = plot_math(obj)
-            print(request.form)
+            #print(obj.get('math_concepts'))
             return render_template('result.html',
                     table = tables,
                     obj = obj,

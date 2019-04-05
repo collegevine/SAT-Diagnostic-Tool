@@ -134,11 +134,11 @@
 
 {% macro pick_eq(m,r,w) %}
 {% if (r == w) %}
-    Reading, Writing
+    Reading and Writing
 {% elif (r == m) %}
-    Reading, Math
+    Math and Reading
 {% elif (m == w) %}
-    Math, Writing
+    Math and Writing
 {% endif %}
 {% endmacro %}
 
@@ -154,20 +154,51 @@
 
 
 {% macro para2_sent2(m,r,w) %}
-{% if (m != w and m != r) %}
-   As you can tell from these numbers, the {{ pick_test_high(m,r,w) }}  section is certainly your strength with the most room for improvement in {{ pick_test_low(m,r,w) }} 
+{% if (m != w and m != r and r != w) %}
+   As you can tell from these numbers, the {{ pick_test_high(m,r,w) }}  section is certainly your strength with the most room for improvement in {{ pick_test_low(m,r,w) }}.
 {% elif ((m == w and r < w) or (m == r and w < r) or (r == w and m < r)) %}
-   As you can tell from these numbers, the {{ pick_eq(m,r,w) }} sections are certainly your strength with the most room for improvement in {{ pick_test_low(m,r,w)  }} 
+   As you can tell from these numbers, the {{ pick_eq(m,r,w) }} sections are certainly your strength with the most room for improvement in {{ pick_test_low(m,r,w) }}.
 {% elif ((m == w and r > w) or (m == r and w > r) or (r == w and m > r)) %}
-   As you can tell from these numbers, the {{ pick_test_high(m,r,w) }} sections is certainly your strength with the most room for improvement in {{ pick_eq(m,r,w)  }} 
+   As you can tell from these numbers, the {{ pick_test_high(m,r,w) }} sections is certainly your strength with the most room for improvement in {{pick_eq(m,r,w)}}.
 {% elif (m == w and r == m) %}
-  As you can tell, the student has pretty similar performance accross each of the three test sections 
+  As you can tell, the student has pretty similar performance accross each of the three test sections.
 {% endif %}
 {% endmacro %}
 
 
-                  
+{% macro section_increase(section, best_concepts, worst_concepts) %}
+    On the {{section}} section, you did best with the questions focused on {{format_concepts(best_concepts)}}.
+{% if worst_concepts|length == 3 %}
+    As you prep, we suggest that you focus on {{format_concepts(worst_concepts)}} as these will provide the biggest boost to your score. 
+{% elif worst_concepts|length == 1 or worst_concepts|length == 2 %}
+    As you prep, we suggest that you focus on {{format_concepts(worst_concepts)}} as these will provide the biggest boost to your score.
+{% elif worst_concepts|length == 0 %}
+    While you did get a perfect score on the {{section}} section of this test, we still suggest taking a couple more full length practice tests to make sure that you are consistently able to score 800s on the {{section}} section. 
+{% endif %}
+{% endmacro %}
 
+{% macro format_concepts(c) %}
+{% if (c|length == 1) %}
+"{{c[0]}}"
+{% elif (c|length == 2) %}
+"{{c[0]}}" and "{{c[1]}}"
+{% elif (c|length== 3) %}
+"{{c[0]}}", "{{c[1]}}", and "{{c[2]}}"
+{% endif %}
+{% endmacro %}
+
+
+{% macro course_rec_name(n) %}
+{% if n < 1580 %}
+{% set course_name = 'Comprehensive' %}
+    {% if n > 1450 %}
+        {% set course_name = 'Success' %}
+    {% elif n > 1520 %}
+        {% set course_name = 'Crash' %}
+    {% endif %}
+    Based on your performance on this diagnostic, we recommend that you use the {{course_name}} course to prepare for the exam.
+{% endif %}
+{% endmacro %}
 
 
 

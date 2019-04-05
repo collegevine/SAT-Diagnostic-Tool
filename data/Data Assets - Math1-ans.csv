@@ -4,7 +4,7 @@ question,answer,difficulty,concept,concept2,explain
 3,A,1,Properties of Integers,,"data/math1/3.txt"
 4,C,2,Triangles,Interior Angles of a Polygon,"data/math1/4.txt"
 5,B,2,Angles & Lines,,"data/math1/5.txt"
-6,B,1,Systems of Linear Inequalities,,"data/math1/6.txt"
+6,B,1,Systems of Inequalities,,"data/math1/6.txt"
 7,C,2,Complex Equations,Exponents,"data/math1/7.txt"
 8,C,4,"Factors, Multiples & Divisibility",Multiplying Polynomials,"data/math1/8.txt"
 9,A,3,Circles,,"data/math1/9.txt"
