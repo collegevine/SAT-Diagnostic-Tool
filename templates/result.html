@@ -7,6 +7,17 @@
 {% from "macros.html" import section_increase with context %}
 {% extends "layout.html" %}
 {% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="basic-panel-body"><h1>CollegeVine SAT Diagnostic Report</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="container">
     {{ res_header("Overall Score",0) }}
     <div class="row">
@@ -60,11 +71,11 @@
 
   <div class="row">
       <div class="col">
-        {{ res_header("Math Score Improvement - Math",3) }}
+        {{ res_header("Possible Score Improvement - Math",3) }}
         {{ bs_table(cols_improve, table.m_improve) }}
       </div>
       <div class="col">
-        {{ res_header("Possible Improvement - Verbal",3) }}
+        {{ res_header("Possible Score Improvement - Verbal",3) }}
         {{ bs_table(cols_improve, table.v_improve) }}
       </div>
   </div>
@@ -143,10 +154,8 @@
   {{ res_header("Course Recommendation",3) }}
   <div class="row">
       <div class="col">
-        <p>
         {{ course_rec_name(obj.total_score) }} 
         Please let me know if you have any questions. We will be discussing the full report during our session in Unit 3.
-        </p>
       </div>
   </div>
 

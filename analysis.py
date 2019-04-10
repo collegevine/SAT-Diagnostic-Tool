@@ -217,6 +217,24 @@ def mk_improve_dict(miss, total):
     return newlist
 
 
+
+def calc_best_worst_difficulty(diff_list, diff_total):
+    improve = [{'improve' : x.get('wrong') * float(x.get('pct')),  \
+        'difficulty' : x.get('difficulty'), \
+        'pct_correct' : 1 - (x.get('wrong') / diff_total.get(x.get('difficulty')))}\
+        for x in diff_list]
+    improve_list = sorted(improve, key = lambda k: float(k['improve']), reverse=True)
+    most_improve_level = improve_list[0].get('difficulty')
+    print(f'improve_list {improve_list}')
+
+    strongest_list = sorted(improve, key = lambda k: float(k['pct_correct']), reverse=True)
+    print(f'strongest_list {strongest_list}')
+    most_improve_level = improve_list[0].get('difficulty')
+    strongest_level = strongest_list[0].get('difficulty')
+    return {'improve':most_improve_level, 'strong':strongest_level}
+
+
+
 def calculate_math_score(ans_dict):
     # MATH 1 Correct answers
     m1_ans_df = pd.read_csv(data_assets.get('math1_ans'))
@@ -347,7 +365,9 @@ def calculate_verbal_score(ans_dict):
 
     vw_worst_concepts = get_worst_concepts(vw_improve_dict)
     verbal_improve_stmt = make_concept_sentences('Verbal',vw_worst_concepts)
-    print(vw_improve_dict)
+    v_improve_dlevel = calc_best_worst_difficulty(v_diff_dict, v_total_diff)
+    print(f'v_improve_dlevel {v_improve_dlevel}')
+    #print(w_diff_dict)
 
     odict = {
         'verbal_score': score,

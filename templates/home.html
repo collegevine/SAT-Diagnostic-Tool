@@ -93,6 +93,27 @@ $(document).ready(function () {
   }
 }
 </style>
+ <div class="container">
+   <div class="jumbotron">
+       <h1>SAT Diagnostic TOOL</h1>
+     <p>Enter the results of the SAT Diagnostic test below and diagnostic results will be     shown.</p>
+     <p><b>USAGE: </b>Resize the screen for a single column view. For black entries, select   the last entry, "_". </p>
+     <p>(c) 2019 CollegeVine. All rights reserved</p>
+     <p><b>NOT FOR EXTERNAL RELEASE</b></p>
+          <h3>About</h3>
+          <p>
+          Enter the results of the SAT Diagnostic test below and click “Submit”. Once you do so, a page containing the following will automatically be generated:
+          <ol>
+          <li>The student’s overall score</li>
+          <li>Verbal/Math analyses</li>
+          <li>Answer Key for the complete diagnostic</li>
+              <li>Course Recommendation</li>
+          </ol>
+          You should guide the student by walking through each of these pieces in order. Note that we <b>DO NOT</b> guarantee score increases, but the the “Possible Score Improvement” sections automatically produce an estimate of increases predicted based on where they’re currently falling in their score.
+          </p>
+   </div>
+ </div>
+
 <form method="POST" action="SATAnalysis">
 
 <div class="container">
@@ -131,7 +152,7 @@ $(document).ready(function () {
     </div>
    </div>
  </div>
-
+</div>
 
 
 <div class="container">
@@ -146,7 +167,7 @@ $(document).ready(function () {
     </div>
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-verbal-report" aria-expanded="false" aria-controls="collapse-verbal-report" id="collapse-verbal-report-btn">
-            Show Report
+            Preview Responses
         </button>
     </div>
 
@@ -203,7 +224,7 @@ $(document).ready(function () {
     </div>
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-writing-report" aria-expanded="false" aria-controls="collapse-writing-report" id="collapse-writing-report-btn">
-            Show Report
+            Preview Responses
         </button>
     </div>
  </div>
@@ -252,7 +273,7 @@ $(document).ready(function () {
 <div class="container">
  <div class="row">
     <div class="col-sm">
-      <div class="math1-panel-body"><h3>SAT <b>MATH Section 1</b></h3></div>
+      <div class="math1-panel-body"><h3>SAT <b>MATH No-Calc</b></h3></div>
     </div>
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math-1" aria-expanded="true" aria-controls="collapse-math-1">
@@ -261,7 +282,7 @@ $(document).ready(function () {
     </div>
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math1-report" aria-expanded="false" aria-controls="collapse-math1-report" id="collapse-math1-report-btn">
-            Show Report
+            Preview Responses
         </button>
     </div>
  </div>
@@ -306,7 +327,7 @@ $(document).ready(function () {
 <div class="container">
  <div class="row">
     <div class="col-sm">
-      <div class="math1-panel-body"><h3>SAT <b>MATH Section 2</b></h3></div>
+      <div class="math1-panel-body"><h3>SAT <b>MATH Calc</b></h3></div>
     </div>
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math-2" aria-expanded="true" aria-controls="collapse-math-2">
@@ -315,7 +336,7 @@ $(document).ready(function () {
     </div>
     <div class="col-sm">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-math2-report" aria-expanded="false" aria-controls="collapse-math2-report" id="collapse-math2-report-btn">
-            Show Report
+            Preview Responses
         </button>
     </div>
  </div>
