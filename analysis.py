@@ -94,6 +94,30 @@ def make_file():
     x = str(random.randint(500,1000000))
     return f'./img/{x}.png'
 
+def plot_improve_barchart(dicts, key, label): # verbal_improve, math_improve
+    df = pd.DataFrame.from_dict(dicts.get(key))
+    df = df.sort_values(['improvement'],ascending=False).head(6)
+    print(f'ploting object {df}')
+    print(df.columns)
+    objects = list(df['concept'])
+    num_wrong = [float(x) for x in list(df['improvement'])]
+    y_pos = np.arange(len(objects))
+    print(f'y_pos {y_pos}')
+    print(f'objects {objects}')
+    print(f'num_wrong {num_wrong}')
+
+    plt.bar(y_pos, num_wrong, align='center', alpha=0.5)
+    plt.xticks(y_pos, objects)
+    plt.ylabel('Possible Score Improvement')
+    plt.xlabel('Concept of Question')
+    plt.title(f'SAT {label} Questions Wrong By Difficulty')
+    plt.xticks(y_pos, objects, rotation='vertical')
+    ffile = make_file()
+    plt.savefig(ffile, bbox_inches='tight')
+    plt.close()
+    return ffile
+
+
 
 def plot_math(dicts):
     df = pd.DataFrame.from_dict(dicts.get('math_difficulty'))
@@ -225,10 +249,10 @@ def calc_best_worst_difficulty(diff_list, diff_total):
         for x in diff_list]
     improve_list = sorted(improve, key = lambda k: float(k['improve']), reverse=True)
     most_improve_level = improve_list[0].get('difficulty')
-    print(f'improve_list {improve_list}')
+    #print(f'improve_list {improve_list}')
 
     strongest_list = sorted(improve, key = lambda k: float(k['pct_correct']), reverse=True)
-    print(f'strongest_list {strongest_list}')
+    #print(f'strongest_list {strongest_list}')
     most_improve_level = improve_list[0].get('difficulty')
     strongest_level = strongest_list[0].get('difficulty')
     return {'improve':most_improve_level, 'strong':strongest_level}
@@ -273,7 +297,7 @@ def calculate_math_score(ans_dict):
 
     m_concept_dict =  add_pct_correct_concept(mk_concept_dict(m_missed_concepts, m_total_concepts),
                                               m_correct_concepts)
-    print([x.get('correct') for x in m_concept_dict])
+    #print([x.get('correct') for x in m_concept_dict])
     m_improve_dict = mk_improve_dict(m_missed_concepts, m_total_concepts)
 
     # Math Difficulty
@@ -366,8 +390,8 @@ def calculate_verbal_score(ans_dict):
     vw_worst_concepts = get_worst_concepts(vw_improve_dict)
     verbal_improve_stmt = make_concept_sentences('Verbal',vw_worst_concepts)
     v_improve_dlevel = calc_best_worst_difficulty(v_diff_dict, v_total_diff)
-    print(f'v_improve_dlevel {v_improve_dlevel}')
-    #print(w_diff_dict)
+    #print(f'v_improve_dlevel {v_improve_dlevel}')
+    print(vw_improve_dict)
 
     odict = {
         'verbal_score': score,
@@ -384,6 +408,7 @@ def calculate_verbal_score(ans_dict):
         'verbal_best_concepts': vw_best_concepts,
         'verbal_worst_concepts' : vw_worst_concepts,
         'verbal_improve_stmt': verbal_improve_stmt
+
 
     }
     return(odict)

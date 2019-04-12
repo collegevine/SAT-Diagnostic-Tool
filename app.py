@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory
-from analysis import calculate_math_score, calculate_verbal_score, run_analysis, plot_verbal, plot_math
+from analysis import calculate_math_score, calculate_verbal_score, run_analysis, plot_verbal, plot_math, plot_improve_barchart
+
 
 import os
 
@@ -21,11 +22,11 @@ def success():
         if request.method == 'POST':
             obj = run_analysis(request.form)
             tables = {
-                    'm_diff' : obj.get('math_difficulty'),
+                    'm_diff'    : obj.get('math_difficulty'),
                     'm_concept' : obj.get('math_concepts'),
-                    'r_diff' : obj.get('reading_difficulty'),
-                    'r_concept': obj.get('reading_concepts'),
-                    'w_diff' : obj.get('writing_difficulty'),
+                    'r_diff'    : obj.get('reading_difficulty'),
+                    'r_concept' : obj.get('reading_concepts'),
+                    'w_diff'    : obj.get('writing_difficulty'),
                     'w_concept' : obj.get('writing_concepts'),
                     'r_explain' : obj.get('reading_explain'),
                     'w_explain' : obj.get('writing_explain'),
@@ -42,6 +43,8 @@ def success():
 
             verbal_plot = plot_verbal(obj)
             math_plot = plot_math(obj)
+            math_improve_plot = plot_improve_barchart(obj, "math_improve", "Math")
+            verbal_improve_plot = plot_improve_barchart(obj, "verbal_improve", "Verbal")
             #print(obj.get('math_concepts'))
             return render_template('result.html',
                     table = tables,
@@ -50,6 +53,8 @@ def success():
                     cols_diff = ['','Question Level Difficulty', 'Wrong', 'Percent of Total Questions'],
                     cols_explain = ['', 'Section','Question','Your Answer', 'Correct Answer', 'Explaination'],
                     cols_improve = ['', 'Concept', 'Possible Score Increase'],
+                    verbal_improve_plot = verbal_improve_plot,
+                    math_improve_plot = math_improve_plot,
                     verbal_plot = verbal_plot,
                     math_plot = math_plot)
 
