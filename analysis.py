@@ -97,14 +97,9 @@ def make_file():
 def plot_improve_barchart(dicts, key, label): # verbal_improve, math_improve
     df = pd.DataFrame.from_dict(dicts.get(key))
     df = df.sort_values(['improvement'],ascending=False).head(6)
-    print(f'ploting object {df}')
-    print(df.columns)
     objects = list(df['concept'])
     num_wrong = [float(x) for x in list(df['improvement'])]
     y_pos = np.arange(len(objects))
-    print(f'y_pos {y_pos}')
-    print(f'objects {objects}')
-    print(f'num_wrong {num_wrong}')
 
     plt.bar(y_pos, num_wrong, align='center', alpha=0.5)
     plt.xticks(y_pos, objects)
@@ -139,6 +134,32 @@ def plot_math(dicts):
     return ffile
 
 
+def plot_math_pie(dicts):
+    df = pd.DataFrame.from_dict(dicts.get('math_difficulty'))
+    df = df.sort_values(['difficulty'])
+    objects = ('Level 1 - Easy', 'Level 2 - Easy to Medium', 'Level 3 - Medium', 'Level 4 - Hard', 'Level 5 - Super-hard')
+    y_pos = np.arange(len(objects))
+    num_wrong = list(df['wrong'])
+    fig1, ax1 = plt.subplots()
+    sizes = []
+    labels = []
+    for i in range(0,len(objects)):
+        if num_wrong[i] == 0:
+            next
+        else:
+            sizes.append(num_wrong[i])
+            labels.append(objects[i])
+    #sizes = num_wrong
+    #labels = objects
+    ax1.pie(sizes, labels=labels, shadow=False,autopct='%d', startangle=90)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    ffile = make_file()
+    plt.title('SAT Math Questions Wrong By Difficulty')
+    plt.savefig(ffile, bbox_inches='tight')
+    plt.close()
+    return ffile
+
+
 def plot_verbal(dicts):
     v = pd.DataFrame.from_dict(dicts.get('reading_difficulty'))[['difficulty', 'wrong']]
     w = pd.DataFrame.from_dict(dicts.get('writing_difficulty'))[['difficulty', 'wrong']]
@@ -160,6 +181,39 @@ def plot_verbal(dicts):
     plt.savefig(ffile, bbox_inches='tight')
     plt.close()
     return ffile
+
+def plot_verbal_pie(dicts):
+    v = pd.DataFrame.from_dict(dicts.get('reading_difficulty'))[['difficulty', 'wrong']]
+    w = pd.DataFrame.from_dict(dicts.get('writing_difficulty'))[['difficulty', 'wrong']]
+    m = pd.merge(v,w, on='difficulty')
+    m['wrong'] = m.apply(lambda row: row['wrong_x'] + row['wrong_y'],axis=1)
+    df = m.sort_values(['difficulty'])
+
+    objects = ('Level 1 - Easy', 'Level 2 - Easy to Medium', 'Level 3 - Medium', 'Level 4 - Hard', 'Level 5 - Super-hard')
+    ## NOTE there is no LEVEL 1 in VERBAL section
+    y_pos = np.arange(len(objects))
+    num_wrong = [0] + list(df['wrong'])
+
+    fig1, ax1 = plt.subplots()
+
+    sizes = []
+    labels = []
+    for i in range(0,len(objects)):
+        if num_wrong[i] == 0:
+            next
+        else:
+            sizes.append(num_wrong[i])
+            labels.append(objects[i])
+
+    ffile = make_file()
+    if len(sizes) > 0:
+        ax1.pie(sizes, labels=labels, shadow=False,autopct='%d', startangle=90)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        plt.title('SAT Verbal Questions Wrong By Difficulty')
+        plt.savefig(ffile, bbox_inches='tight')
+        plt.close()
+    return ffile
+
 
 def mk_concept_dict(miss, total):
     llist = [{'concept': k, 'wrong': int(miss.get(k,0)), 'pct' : fmt_percentage(miss.get(k,0), \
@@ -192,8 +246,8 @@ def get_best_concepts(concept_list):
 def get_worst_concepts(concept_list):
     non_perfect = [x for x in concept_list if int(x.get('improvement')) > 0]
     if len(non_perfect) > 0:
-        non_perfect_idx = len(non_prefect) if (len(non_perfect) < 3) else 3
-        worst = sorted(non_perfect, key = lambda i: i['improvement'], reverse=True)[0:non_perfect_idx]
+        non_perfect_idx = len(non_perfect) if (len(non_perfect) < 3) else 3
+        worst = sorted(non_perfect, key = lambda i: float(i['improvement']), reverse=True)[0:non_perfect_idx]
         for x in worst:
             print(x.get('concept') + " " + str(x.get('improvement')) + "\n")
         return [x.get('concept') for x in worst[0:non_perfect_idx]]
@@ -308,6 +362,7 @@ def calculate_math_score(ans_dict):
 
     math_best_concepts = get_best_concepts(m_concept_dict)
     math_worst_concepts = get_worst_concepts(m_improve_dict)
+    print(f'math_worst_concepts {math_worst_concepts}')
     math_improve_stmt = make_concept_sentences('Math', math_worst_concepts)
 
 
@@ -353,13 +408,15 @@ def calculate_verbal_score(ans_dict):
     percentile = int(v_scale_df.loc[v_scale_df['raw'] == raw_score ]['percentile'].tolist()[0])
 
     # Verbal Concepts
-    v_total_concepts = agg_counts_dict(v_ans_df[['concept','concept2']])
+    v_total_concepts = agg_counts_dict(v_ans_df[['concept','concept2','concept3']])
     v_missed_concepts = agg_counts_dict(v_ans_df.loc[v_ans_df['correct'] == False][['concept','concept2','concept3']])
     v_correct_concepts = agg_counts_dict(v_ans_df.loc[v_ans_df['correct'] == True][['concept','concept2','concept3']])
 
     v_concept_dict_table = mk_concept_dict(v_missed_concepts, v_total_concepts)
     v_concept_dict =  add_pct_correct_concept(mk_concept_dict(v_missed_concepts, v_total_concepts),
                                               v_correct_concepts)
+    v_sum = sum([float(x.get('pct')) for x in v_concept_dict])
+    print(f'v_sum {v_sum}')
     # Writing Concepts
 
     w_total_concepts = agg_counts_dict(w_ans_df[['concept','concept2']])
@@ -368,6 +425,9 @@ def calculate_verbal_score(ans_dict):
     w_concept_dict_table = mk_concept_dict(w_missed_concepts, w_total_concepts)
     w_concept_dict =  add_pct_correct_concept(mk_concept_dict(w_missed_concepts, w_total_concepts),
                                               w_correct_concepts)
+    print(w_concept_dict)
+    w_sum = sum([float(x.get('pct')) for x in w_concept_dict])
+    print(f'w_sum {w_sum}')
 
     vw_best_concepts = get_best_concepts(w_concept_dict + v_concept_dict)
 
@@ -388,10 +448,11 @@ def calculate_verbal_score(ans_dict):
     vw_improve_dict = mk_improve_dict(vw_missed_concepts, vw_total_concepts)
 
     vw_worst_concepts = get_worst_concepts(vw_improve_dict)
+
     verbal_improve_stmt = make_concept_sentences('Verbal',vw_worst_concepts)
     v_improve_dlevel = calc_best_worst_difficulty(v_diff_dict, v_total_diff)
     #print(f'v_improve_dlevel {v_improve_dlevel}')
-    print(vw_improve_dict)
+    #print(vw_improve_dict)
 
     odict = {
         'verbal_score': score,

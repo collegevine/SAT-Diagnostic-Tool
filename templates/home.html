@@ -290,23 +290,34 @@ $(document).ready(function () {
 <div class="collapse show" id="collapse-math-1">
     <div class="row">
         <div class="column">
-        {% set verbal = verbal %}
-        {% for n in range(1,9) %}
-        
-            {{ multi_choice(n, "math1", "M-") }}
-        {% endfor %}
+            {% for n in range(1,5) %}
+                {{ multi_choice(n, "math1", "M-") }}
+            {% endfor %}
         </div>
         <div class="column">
-        {% for n in range(9,16) %}
-            {{ multi_choice(n, "math1", "M-") }}
-        {% endfor %}
+            {% for n in range(5,9) %}
+                {{ multi_choice(n, "math1", "M-") }}
+            {% endfor %}
         </div>
         <div class="column">
-        {% for n in range(16,21) %}
-            {{ numeric_q(n, "math1", "M-") }}
-        {% endfor %}
+            {% for n in range(9,13) %}
+                {{ multi_choice(n, "math1", "M-") }}
+            {% endfor %}
+        </div>
+        <div class="column">
+            {% for n in range(13,16) %}
+                {{ multi_choice(n, "math1", "M-") }}
+            {% endfor %}
         </div>
     </div>
+    <div class="row">
+        <div class="column">
+            {% for n in range(16,21) %}
+                {{ numeric_q(n, "math1", "M-") }}
+            {% endfor %}
+        </div>
+    </div>
+
 </div>
 <div class="collapse" id="collapse-math1-report">
     <div class="row">
@@ -344,24 +355,34 @@ $(document).ready(function () {
     <div class="row">
         <div class="column">
     {% set verbal = verbal %}
-    {% for n in range(1,11) %}
+    {% for n in range(1,9) %}
         {{ multi_choice(n, "math2", "M2-") }}
     {% endfor %}
         </div>
         <div class="column">
-    {% for n in range(11,21) %}
+    {% for n in range(9,17) %}
         {{ multi_choice(n, "math2", "M2-") }}
     {% endfor %}
         </div>
         <div class="column">
-    {% for n in range(21,31) %}
+    {% for n in range(17,25) %}
         {{ multi_choice(n, "math2", "M2-") }}
     {% endfor %}
         </div>
         <div class="column">
-    {% for n in range(31,39) %}
-        {{ numeric_q(n, "math2", "M2-") }}
+    {% for n in range(25,31) %}
+        {{ multi_choice(n, "math2", "M2-") }}
     {% endfor %}
+       </div>
+
+
+    </div>
+    <div class="row">
+        <div class="column">
+        {% for n in range(31,39) %}
+            {{ numeric_q(n, "math2", "M2-") }}
+        {% endfor %}
+        </div>
         </div>
     </div>
   </div>

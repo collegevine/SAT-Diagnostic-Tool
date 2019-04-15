@@ -10,13 +10,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm">
+        <div class="col">
             <div class="basic-panel-body"><h1>CollegeVine SAT Diagnostic Report</h1>
             </div>
         </div>
     </div>
-
-
     {{ res_header("Overall Score",0) }}
     <div class="row">
         <div class="col-sm">
@@ -39,18 +37,10 @@
         </div>
 
     </div>
-  <div class="basic-panel-body">
-  {{ res_header("Course Recommendation",3) }}
-          <h3>{{course_rec(obj.total_score) }} </h3>
-          <p>{{para2_sent1(obj.total_score) }} 
-          {{para2_sent2(obj.math_question_percent, obj.reading_question_percent, obj.writing_question_percent) }} </p>
-  </div>
 
-
-  </div>
   {{ res_header("Course Recommendation",3) }}
   <div class="row">
-      <div class="col-6">
+      <div class="col">
           <h3>{{course_rec(obj.total_score) }} </h3>
           <p>{{para2_sent1(obj.total_score) }} 
           {{para2_sent2(obj.math_question_percent, obj.reading_question_percent, obj.writing_question_percent) }} </p>
@@ -174,5 +164,5 @@
         Please let me know if you have any questions. We will be discussing the full report during our session in Unit 3.
       </div>
   </div>
-
+  </div>
 {% endblock %}

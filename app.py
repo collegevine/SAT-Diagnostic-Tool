@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, send_from_directory
-from analysis import calculate_math_score, calculate_verbal_score, run_analysis, plot_verbal, plot_math, plot_improve_barchart
+from analysis import calculate_math_score, calculate_verbal_score, run_analysis, plot_verbal, plot_math, plot_improve_barchart, plot_math_pie, plot_verbal_pie
 
 
 import os
@@ -41,8 +41,8 @@ def success():
                     'v_improve_stmt' : obj.get('verbal_improve_stmt'),
             }
 
-            verbal_plot = plot_verbal(obj)
-            math_plot = plot_math(obj)
+            verbal_plot = plot_verbal_pie(obj)
+            math_plot = plot_math_pie(obj)
             math_improve_plot = plot_improve_barchart(obj, "math_improve", "Math")
             verbal_improve_plot = plot_improve_barchart(obj, "verbal_improve", "Verbal")
             #print(obj.get('math_concepts'))
