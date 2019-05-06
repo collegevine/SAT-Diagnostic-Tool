@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 import os
+import copy
 from settings import APP_ROOT
 
 
@@ -95,7 +96,11 @@ def make_file():
     return f'./img/{x}.png'
 
 def plot_improve_barchart(dicts, key, label): # verbal_improve, math_improve
-    df = pd.DataFrame.from_dict(dicts.get(key))
+    cdicts = copy.deepcopy(dicts)
+    local_dicts = cdicts.get(key)
+    for x in local_dicts:
+        x['improvement'] = float(x['improvement'])
+    df = pd.DataFrame.from_dict(local_dicts)
     df = df.sort_values(['improvement'],ascending=False).head(6)
     objects = list(df['concept'])
     num_wrong = [float(x) for x in list(df['improvement'])]
@@ -248,8 +253,8 @@ def get_worst_concepts(concept_list):
     if len(non_perfect) > 0:
         non_perfect_idx = len(non_perfect) if (len(non_perfect) < 3) else 3
         worst = sorted(non_perfect, key = lambda i: float(i['improvement']), reverse=True)[0:non_perfect_idx]
-        for x in worst:
-            print(x.get('concept') + " " + str(x.get('improvement')) + "\n")
+        #for x in worst:
+            #print(x.get('concept') + " " + str(x.get('improvement')) + "\n")
         return [x.get('concept') for x in worst[0:non_perfect_idx]]
     else:
         return []
@@ -351,7 +356,6 @@ def calculate_math_score(ans_dict):
 
     m_concept_dict =  add_pct_correct_concept(mk_concept_dict(m_missed_concepts, m_total_concepts),
                                               m_correct_concepts)
-    #print([x.get('correct') for x in m_concept_dict])
     m_improve_dict = mk_improve_dict(m_missed_concepts, m_total_concepts)
 
     # Math Difficulty
@@ -362,7 +366,6 @@ def calculate_math_score(ans_dict):
 
     math_best_concepts = get_best_concepts(m_concept_dict)
     math_worst_concepts = get_worst_concepts(m_improve_dict)
-    print(f'math_worst_concepts {math_worst_concepts}')
     math_improve_stmt = make_concept_sentences('Math', math_worst_concepts)
 
 
@@ -416,7 +419,6 @@ def calculate_verbal_score(ans_dict):
     v_concept_dict =  add_pct_correct_concept(mk_concept_dict(v_missed_concepts, v_total_concepts),
                                               v_correct_concepts)
     v_sum = sum([float(x.get('pct')) for x in v_concept_dict])
-    print(f'v_sum {v_sum}')
     # Writing Concepts
 
     w_total_concepts = agg_counts_dict(w_ans_df[['concept','concept2']])
@@ -425,9 +427,7 @@ def calculate_verbal_score(ans_dict):
     w_concept_dict_table = mk_concept_dict(w_missed_concepts, w_total_concepts)
     w_concept_dict =  add_pct_correct_concept(mk_concept_dict(w_missed_concepts, w_total_concepts),
                                               w_correct_concepts)
-    print(w_concept_dict)
     w_sum = sum([float(x.get('pct')) for x in w_concept_dict])
-    print(f'w_sum {w_sum}')
 
     vw_best_concepts = get_best_concepts(w_concept_dict + v_concept_dict)
 
@@ -451,8 +451,6 @@ def calculate_verbal_score(ans_dict):
 
     verbal_improve_stmt = make_concept_sentences('Verbal',vw_worst_concepts)
     v_improve_dlevel = calc_best_worst_difficulty(v_diff_dict, v_total_diff)
-    #print(f'v_improve_dlevel {v_improve_dlevel}')
-    #print(vw_improve_dict)
 
     odict = {
         'verbal_score': score,
