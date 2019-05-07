@@ -1,3 +1,6 @@
 venv/
 *.pyc
 img/*
+.DS_Store
+.RData
+.Rhistory
