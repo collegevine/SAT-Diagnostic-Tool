@@ -13,8 +13,8 @@ data_assets = {
     'math1_ans' : './data/Data Assets - Math1-ans.csv',
     'math2_ans' : './data//Data Assets - Math2-ans.csv',
     'math_chart' : './data/Data Assets - Math-score-chart.csv',
-    'verbal_ans' : './data/Data Assets - Verbal-ans.csv',
-    'writing_ans' : './data/Data Assets - Writing-ans.csv',
+    'verbal_ans' : './data/Data Assets - Verbal-ans.br.csv',
+    'writing_ans' : './data/Data Assets - Writing-ans.br.csv',
     'verbal_scale' : './data/Data Assets - Verbal-scaled-score.csv',
     'verbal_score' : './data/Data Assets - Verbal-score-chart.csv',
     'combined_score' : './data/Data Assets - Combined-percentile.csv',
@@ -110,7 +110,7 @@ def plot_improve_barchart(dicts, key, label): # verbal_improve, math_improve
     plt.xticks(y_pos, objects)
     plt.ylabel('Possible Score Improvement')
     plt.xlabel('Concept of Question')
-    plt.title(f'SAT {label} Questions Wrong By Difficulty')
+    plt.title(f'SAT {label} Questions Missed By Difficulty')
     plt.xticks(y_pos, objects, rotation='vertical')
     ffile = make_file()
     plt.savefig(ffile, bbox_inches='tight')
@@ -131,7 +131,7 @@ def plot_math(dicts):
     plt.xticks(y_pos, objects)
     plt.ylabel('Number of Questions')
     plt.xlabel('Difficulty Level of Question')
-    plt.title('SAT Math Questions Wrong By Difficulty')
+    plt.title('SAT Math Questions Missed By Difficulty')
     plt.xticks(y_pos, objects, rotation='vertical')
     ffile = make_file()
     plt.savefig(ffile, bbox_inches='tight')
@@ -159,7 +159,7 @@ def plot_math_pie(dicts):
     ax1.pie(sizes, labels=labels, shadow=False,autopct='%d', startangle=90)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     ffile = make_file()
-    plt.title('SAT Math Questions Wrong By Difficulty')
+    plt.title('SAT Math Questions Missed By Difficulty')
     plt.savefig(ffile, bbox_inches='tight')
     plt.close()
     return ffile
@@ -181,7 +181,7 @@ def plot_verbal(dicts):
     plt.xticks(y_pos, objects, rotation='vertical')
     plt.ylabel('Number of Questions')
     plt.xlabel('Difficulty Level of Question')
-    plt.title('SAT Verbal Questions Wrong By Difficulty')
+    plt.title('SAT Verbal Questions Missed By Difficulty')
     ffile = make_file()
     plt.savefig(ffile, bbox_inches='tight')
     plt.close()
@@ -214,7 +214,7 @@ def plot_verbal_pie(dicts):
     if len(sizes) > 0:
         ax1.pie(sizes, labels=labels, shadow=False,autopct='%d', startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        plt.title('SAT Verbal Questions Wrong By Difficulty')
+        plt.title('SAT Verbal Questions Missed By Difficulty')
         plt.savefig(ffile, bbox_inches='tight')
         plt.close()
     return ffile

@@ -41,9 +41,9 @@
   {{ res_header("Course Recommendation",3) }}
   <div class="row">
       <div class="col">
-          <h3>{{course_rec(obj.total_score) }} </h3>
-          <p>{{para2_sent1(obj.total_score) }} 
-          {{para2_sent2(obj.math_question_percent, obj.reading_question_percent, obj.writing_question_percent) }} </p>
+          <h3>{{  course_rec(obj.total_score) }} </h3>
+          <p>{{  para2_sent1(obj.total_score) }} 
+          {{  para2_sent2(obj.math_question_percent, obj.reading_question_percent, obj.writing_question_percent) }} </p>
       </div>
   </div>
 
@@ -59,19 +59,19 @@
   {{ res_header("Questions by Difficulty Level",3) }}
   <div class="row">
       <div class="col-6">
-          <img src="{{math_plot}}"> 
+          <img src="{{ math_plot }}"> 
       </div>
       <div class="col-6">
-          <img src="{{verbal_plot}}"> 
+          <img src="{{ verbal_plot }}"> 
       </div>
   </div>
   {{ res_header("Areas of Score Improvement",3) }}
   <div class="row">
       <div class="col-6">
-          <img src="{{math_improve_plot}}"> 
+          <img src="{{ math_improve_plot }}"> 
       </div>
       <div class="col-6">
-          <img src="{{verbal_improve_plot}}"> 
+          <img src="{{ verbal_improve_plot }}"> 
       </div>
   </div>
 
@@ -138,19 +138,19 @@
             </div>
       </div>
   </div>
-  {{ res_header("Reading Answer Explainations",3) }}
+  {{ res_header("Reading Answer Explanations",3) }}
   <div class="row">
       <div class="col">
      {{ bs_table(cols_explain, table.r_explain) }}
       </div>
   </div>
-  {{ res_header("Writing Answer Explainations",3) }}
+  {{ res_header("Writing Answer Explanations",3) }}
   <div class="row">
       <div class="col">
      {{ bs_table(cols_explain, table.w_explain) }}
       </div>
   </div>
-  {{ res_header("Math Answer Explainations",3) }}
+  {{ res_header("Math Answer Explanations",3) }}
   <div class="row">
       <div class="col">
      {{ bs_table(cols_explain, table.m_explain) }}
