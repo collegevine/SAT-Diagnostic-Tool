@@ -49,7 +49,7 @@ def success():
             return render_template('result.html',
                     table = tables,
                     obj = obj,
-                    cols_concept = ['', 'Concept', 'Wrong', 'Percent of Total Test Questions'],
+                    cols_concept = ['', 'Concept', 'Correct', 'Incorrect', 'Total', 'Percent of Total Test Questions'],
                     cols_diff = ['','Question Level Difficulty', 'Wrong', 'Percent of Total Questions'],
                     cols_explain = ['', 'Section','Question','Your Answer', 'Correct Answer', 'Explaination'],
                     cols_improve = ['', 'Concept', 'Possible Score Increase'],

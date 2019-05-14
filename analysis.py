@@ -251,8 +251,11 @@ def plot_verbal_pie(dicts):
 
 
 def mk_concept_dict(miss, total):
-    llist = [{'concept': k, 'wrong': int(miss.get(k,0)), 'pct' : fmt_percentage(miss.get(k,0), \
-            sum(total.values())) }for k in total.keys()]
+    llist = [{'concept': k, \
+              'correct': int(total.get(k,0)) - int(miss.get(k,0)),\
+              'wrong': int(miss.get(k,0)), \
+              'total': int(total.get(k,0)), \
+              'pct' : fmt_percentage(miss.get(k,0),sum(total.values())) } for k in total.keys()]
     newlist = sorted(llist, key=lambda k: float(k['pct']), reverse=True)
     return newlist
 
@@ -402,7 +405,7 @@ def calculate_math_score(ans_dict):
     odict = {
         'math_score': score,
         'math_percentile': percentile,
-        'math_concepts': filter_concepts_top5(m_concept_dict_table),
+        'math_concepts': m_concept_dict_table,
         'math_difficulty': m_diff_dict,
         'math_explain' : m_explain_dict,
         'math_improve' : filter_concepts_top5(m_improve_dict),
@@ -487,10 +490,10 @@ def calculate_verbal_score(ans_dict):
     odict = {
         'verbal_score': score,
         'verbal_percentile': percentile,
-        'reading_concepts': filter_concepts_top5(v_concept_dict_table),
+        'reading_concepts': v_concept_dict_table,
         'reading_difficulty': v_diff_dict,
         'reading_explain' : v_explain_dict,
-        'writing_concepts': filter_concepts_top5(w_concept_dict_table),
+        'writing_concepts': w_concept_dict_table,
         'writing_difficulty': w_diff_dict,
         'writing_explain' : w_explain_dict,
         'verbal_improve' : filter_concepts_top5(vw_improve_dict),
