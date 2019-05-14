@@ -45,6 +45,8 @@ def success():
             math_plot = plot_math(obj)
             math_improve_plot = plot_total_miss_barchart(obj, "math_concept_plot", "Math")
             verbal_improve_plot = plot_total_miss_barchart(obj, "verbal_concept_plot", "Verbal")
+            reading_improve_plot = plot_total_miss_barchart(obj, "reading_concept_plot", "Reading")
+            writing_improve_plot = plot_total_miss_barchart(obj, "writing_concept_plot", "Writing")
             #print(obj.get('math_concepts'))
             return render_template('result.html',
                     table = tables,
@@ -53,7 +55,8 @@ def success():
                     cols_diff = ['','Question Level Difficulty', 'Wrong', 'Percent of Total Questions'],
                     cols_explain = ['', 'Section','Question','Your Answer', 'Correct Answer', 'Explaination'],
                     cols_improve = ['', 'Concept', 'Possible Score Increase'],
-                    verbal_improve_plot = verbal_improve_plot,
+                    reading_improve_plot = reading_improve_plot,
+                    writing_improve_plot = writing_improve_plot,
                     math_improve_plot = math_improve_plot,
                     verbal_plot = verbal_plot,
                     math_plot = math_plot)

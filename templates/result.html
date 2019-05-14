@@ -81,7 +81,12 @@
   </div>
   <div class="row">
       <div class="col-6">
-          <img src="{{ verbal_improve_plot }}"> 
+          <img src="{{ reading_improve_plot }}"> 
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-6">
+          <img src="{{ writing_improve_plot }}"> 
       </div>
   </div>
 
@@ -110,13 +115,6 @@
             </div>
       </div>
   </div>
-  <div class="row">
-      <div class="col">
-        <p> {{ section_increase("Reading", table.v_best_concepts, table.v_worst_concepts) }}
-        {{ table.v_improve_stmt }}
-        </p>
-      </div>
-</div>
   {{ res_header("How you did on Writing",3) }}
   <div class="row">
       <div class="col-6">

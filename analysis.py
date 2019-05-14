@@ -125,7 +125,7 @@ def plot_total_miss_barchart(dicts, key, label): # verbal_improve, math_improve
     for x in local_dicts:
         x['total'] = float(x['correct']) + float(x['wrong'])
     df = pd.DataFrame.from_dict(local_dicts)
-    df = df.sort_values(['wrong'],ascending=False).head(6).sort_values(['wrong'], ascending=True)
+    df = df.sort_values(['wrong'],ascending=False).sort_values(['wrong'], ascending=True)
     objects     = list(df['concept'])
     num_total   = [float(x) for x in list(df['total'])]
     num_wrong   = [float(x) for x in list(df['wrong'])]
@@ -148,24 +148,42 @@ def plot_total_miss_barchart(dicts, key, label): # verbal_improve, math_improve
     return ffile
 
 def plot_math(dicts):
-    df = pd.DataFrame.from_dict(dicts.get('math_difficulty'))
+    df = pd.DataFrame.from_dict(dicts.get('math_difficulty_plot'))
     df = df.sort_values(['difficulty'])
 
     objects = ('Level 1 - Easy', 'Level 2 - Easy to Medium', 'Level 3 - Medium', 'Level 4 - Hard', 'Level 5 - Super-hard')
     y_pos = np.arange(len(objects))
     num_wrong = list(df['wrong'])
+    num_total = list(df['total'])
+    num_correct = list(df['correct'])
 
-    plt.bar(y_pos, num_wrong, align='center', color = '#009F60')
-    plt.xticks(y_pos, objects)
-    plt.ylabel('Number of Questions')
-    plt.xlabel('Difficulty Level of Question')
-    plt.title('SAT Math Questions Missed By Difficulty')
-    _, labels = plt.xticks(y_pos, objects, rotation='vertical')
-    plt.setp(labels, rotation=45)
+    p1 = plt.barh(y_pos, num_wrong, align='center', color = '#009F60', alpha = 0.5)
+    p2 = plt.barh(y_pos, num_correct, align='center', color = '#009F60')
+    plt.yticks(y_pos, objects)
+    plt.xlabel('Questions Within Difficulty')
+    plt.ylabel('Difficulty of Question')
+    label = "Math"
+    plt.title(f'SAT {label} Difficulty Missed')
+    _, labels = plt.yticks(y_pos, objects, rotation='horizontal')
+    plt.legend((p1[0], p2[0]), ('Total', 'Correct'))
+
+
     ffile = make_file()
     plt.savefig(ffile, bbox_inches='tight')
     plt.close()
     return ffile
+    if False:
+        plt.bar(y_pos, num_wrong, align='center', color = '#009F60')
+        plt.xticks(y_pos, objects)
+        plt.ylabel('Number of Questions')
+        plt.xlabel('Difficulty Level of Question')
+        plt.title('SAT Math Questions Missed By Difficulty')
+        _, labels = plt.xticks(y_pos, objects, rotation='vertical')
+        plt.setp(labels, rotation=45)
+        ffile = make_file()
+        plt.savefig(ffile, bbox_inches='tight')
+        plt.close()
+        return ffile
 
 
 def plot_math_pie(dicts):
@@ -195,27 +213,50 @@ def plot_math_pie(dicts):
 
 
 def plot_verbal(dicts):
-    v = pd.DataFrame.from_dict(dicts.get('reading_difficulty'))[['difficulty', 'wrong']]
-    w = pd.DataFrame.from_dict(dicts.get('writing_difficulty'))[['difficulty', 'wrong']]
+    cols = ['difficulty', 'wrong','correct', 'total']
+    v = pd.DataFrame.from_dict(dicts.get('reading_difficulty_plot'))[cols]
+    w = pd.DataFrame.from_dict(dicts.get('writing_difficulty_plot'))[cols]
     m = pd.merge(v,w, on='difficulty')
     m['wrong'] = m.apply(lambda row: row['wrong_x'] + row['wrong_y'],axis=1)
+    m['total'] = m.apply(lambda row: row['total_x'] + row['total_y'],axis=1)
+    m['correct'] = m.apply(lambda row: row['correct_x'] + row['correct_y'],axis=1)
     df = m.sort_values(['difficulty'])
 
     objects = ('Level 1 - Easy', 'Level 2 - Easy to Medium', 'Level 3 - Medium', 'Level 4 - Hard', 'Level 5 - Super-hard')
     ## NOTE there is no LEVEL 1 in VERBAL section
     y_pos = np.arange(len(objects))
     num_wrong = [0] + list(df['wrong'])
+    num_correct = [0] + list(df['correct'])
+    num_total = [0] + list(df['total'])
 
-    plt.bar(y_pos, num_wrong, align='center', color = '#009F60')
-    _, labels = plt.xticks(y_pos, objects, rotation='vertical')
-    plt.setp(labels, rotation=45)
-    plt.ylabel('Number of Questions')
-    plt.xlabel('Difficulty Level of Question')
-    plt.title('SAT Verbal Questions Missed By Difficulty')
+    p1 = plt.barh(y_pos, num_wrong, align='center', color = '#009F60', alpha = 0.5)
+    p2 = plt.barh(y_pos, num_correct, align='center', color = '#009F60')
+    plt.yticks(y_pos, objects)
+    plt.xlabel('Questions Within Difficulty')
+    plt.ylabel('Difficulty of Question')
+    label = "Verbal"
+    plt.title(f'SAT {label} Difficulty Missed')
+    _, labels = plt.yticks(y_pos, objects, rotation='horizontal')
+    plt.legend((p1[0], p2[0]), ('Total', 'Correct'))
+
+
     ffile = make_file()
     plt.savefig(ffile, bbox_inches='tight')
     plt.close()
     return ffile
+
+
+    if False:
+        plt.bar(y_pos, num_wrong, align='center', color = '#009F60')
+        _, labels = plt.xticks(y_pos, objects, rotation='vertical')
+        plt.setp(labels, rotation=45)
+        plt.ylabel('Number of Questions')
+        plt.xlabel('Difficulty Level of Question')
+        plt.title('SAT Verbal Questions Missed By Difficulty')
+        ffile = make_file()
+        plt.savefig(ffile, bbox_inches='tight')
+        plt.close()
+        return ffile
 
 def plot_verbal_pie(dicts):
     v = pd.DataFrame.from_dict(dicts.get('reading_difficulty'))[['difficulty', 'wrong']]
@@ -295,6 +336,13 @@ def get_worst_concepts(concept_list):
 
 def mk_diff_dict(miss, total):
     return [{'difficulty': k, 'wrong': miss.get(k,0), 'pct' : fmt_percentage(miss.get(k,0), sum(total.values())) }  for k in total.keys()]
+
+def mk_diff_dict_plot(miss, total):
+    return [{'difficulty': k, \
+             'wrong': miss.get(k,0), \
+             'total': total.get(k,0),\
+             'correct':total.get(k,0) -  miss.get(k,0),
+             'pct' : fmt_percentage(miss.get(k,0), sum(total.values())) }  for k in total.keys()]
 
 def mk_explain_dict(df,section):
     df_copy = df.copy()
@@ -396,6 +444,7 @@ def calculate_math_score(ans_dict):
     m_missed_diff = dict(m_ans_df.loc[m_ans_df['correct'] == False][['difficulty']].apply(pd.value_counts)['difficulty'])
     m_total_diff = agg_counts_dict(m_ans_df[['difficulty']])
     m_diff_dict = mk_diff_dict(m_missed_diff, m_total_diff)
+    m_diff_dict_plot = mk_diff_dict_plot(m_missed_diff, m_total_diff)
 
 
     math_best_concepts = get_best_concepts(m_concept_dict)
@@ -407,6 +456,7 @@ def calculate_math_score(ans_dict):
         'math_percentile': percentile,
         'math_concepts': m_concept_dict_table,
         'math_difficulty': m_diff_dict,
+        'math_difficulty_plot': m_diff_dict_plot,
         'math_explain' : m_explain_dict,
         'math_improve' : filter_concepts_top5(m_improve_dict),
         'math_q_percent': math_q_percent,
@@ -470,11 +520,13 @@ def calculate_verbal_score(ans_dict):
     v_missed_diff = dict(v_ans_df.loc[v_ans_df['correct'] == False][['difficulty']].apply(pd.value_counts)['difficulty'])
     v_total_diff = agg_counts_dict(v_ans_df[['difficulty']])
     v_diff_dict = mk_diff_dict(v_missed_diff, v_total_diff)
+    v_diff_dict_plot = mk_diff_dict_plot(v_missed_diff, v_total_diff)
 
     # Writing Difficulty
     w_missed_diff = dict(w_ans_df.loc[w_ans_df['correct'] == False][['difficulty']].apply(pd. value_counts)['difficulty'])
     w_total_diff = agg_counts_dict(w_ans_df[['difficulty']])
     w_diff_dict = mk_diff_dict(w_missed_diff, w_total_diff)
+    w_diff_dict_plot = mk_diff_dict_plot(w_missed_diff, w_total_diff)
 
 
     # Verbal Section Improvement
@@ -492,9 +544,11 @@ def calculate_verbal_score(ans_dict):
         'verbal_percentile': percentile,
         'reading_concepts': v_concept_dict_table,
         'reading_difficulty': v_diff_dict,
+        'reading_difficulty_plot': v_diff_dict_plot,
         'reading_explain' : v_explain_dict,
         'writing_concepts': w_concept_dict_table,
         'writing_difficulty': w_diff_dict,
+        'writing_difficulty_plot': w_diff_dict_plot,
         'writing_explain' : w_explain_dict,
         'verbal_improve' : filter_concepts_top5(vw_improve_dict),
         'verbal_question_percent' : verbal_question_percent,
@@ -502,7 +556,9 @@ def calculate_verbal_score(ans_dict):
         'verbal_best_concepts': vw_best_concepts,
         'verbal_worst_concepts' : vw_worst_concepts,
         'verbal_improve_stmt': verbal_improve_stmt,
-        'verbal_concept_plot': vw_concept_dict
+        'verbal_concept_plot': vw_concept_dict,
+        'reading_concept_plot': v_concept_dict,
+        'writing_concept_plot': w_concept_dict
     }
 
     return(odict)
