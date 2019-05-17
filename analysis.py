@@ -335,7 +335,11 @@ def get_worst_concepts(concept_list):
 
 
 def mk_diff_dict(miss, total):
-    return [{'difficulty': k, 'wrong': miss.get(k,0), 'pct' : fmt_percentage(miss.get(k,0), sum(total.values())) }  for k in total.keys()]
+    return [{'difficulty': k, \
+            'wrong': miss.get(k,0), \
+            'correct': total.get(k,0) - miss.get(k,0),\
+            'total': total.get(k,0),\
+            'pct' : fmt_percentage(miss.get(k,0), sum(total.values())) }  for k in total.keys()]
 
 def mk_diff_dict_plot(miss, total):
     return [{'difficulty': k, \
@@ -399,6 +403,11 @@ def filter_concepts_top5(cdict):
     idx = 5 if (len(cdict) > 5) else len(cdict)
     return(cdict[0:idx])
 
+def pop_pct(ddict):
+    for x in ddict:
+        if x.get('pct'):
+            x.pop('pct')
+
 
 def calculate_math_score(ans_dict):
     # MATH 1 Correct answers
@@ -435,7 +444,7 @@ def calculate_math_score(ans_dict):
     m_correct_concepts = agg_counts_dict(m_ans_df.loc[m_ans_df['correct'] == True][['concept','concept2']])
     #m_concept_dict =  mk_concept_dict(m_missed_concepts, m_total_concepts)
     m_concept_dict_table = mk_concept_dict(m_missed_concepts, m_total_concepts)
-
+    pop_pct(m_concept_dict_table)
     m_concept_dict =  add_pct_correct_concept(mk_concept_dict(m_missed_concepts, m_total_concepts),
                                               m_correct_concepts)
     m_improve_dict = mk_improve_dict(m_missed_concepts, m_total_concepts)
@@ -444,6 +453,7 @@ def calculate_math_score(ans_dict):
     m_missed_diff = dict(m_ans_df.loc[m_ans_df['correct'] == False][['difficulty']].apply(pd.value_counts)['difficulty'])
     m_total_diff = agg_counts_dict(m_ans_df[['difficulty']])
     m_diff_dict = mk_diff_dict(m_missed_diff, m_total_diff)
+    pop_pct(m_diff_dict)
     m_diff_dict_plot = mk_diff_dict_plot(m_missed_diff, m_total_diff)
 
 
@@ -500,6 +510,7 @@ def calculate_verbal_score(ans_dict):
     v_correct_concepts = agg_counts_dict(v_ans_df.loc[v_ans_df['correct'] == True][['concept','concept2','concept3']])
 
     v_concept_dict_table = mk_concept_dict(v_missed_concepts, v_total_concepts)
+    pop_pct(v_concept_dict_table)
     v_concept_dict =  add_pct_correct_concept(mk_concept_dict(v_missed_concepts, v_total_concepts),
                                               v_correct_concepts)
     v_sum = sum([float(x.get('pct')) for x in v_concept_dict])
@@ -509,6 +520,7 @@ def calculate_verbal_score(ans_dict):
     w_missed_concepts = agg_counts_dict(w_ans_df.loc[w_ans_df['correct'] == False][['concept','concept2']])
     w_correct_concepts = agg_counts_dict(w_ans_df.loc[w_ans_df['correct'] == True][['concept','concept2']])
     w_concept_dict_table = mk_concept_dict(w_missed_concepts, w_total_concepts)
+    pop_pct(w_concept_dict_table)
     w_concept_dict =  add_pct_correct_concept(mk_concept_dict(w_missed_concepts, w_total_concepts),
                                               w_correct_concepts)
     w_sum = sum([float(x.get('pct')) for x in w_concept_dict])
@@ -539,6 +551,8 @@ def calculate_verbal_score(ans_dict):
     verbal_improve_stmt = make_concept_sentences('Verbal',vw_worst_concepts)
     v_improve_dlevel = calc_best_worst_difficulty(v_diff_dict, v_total_diff)
 
+    pop_pct(v_diff_dict)
+    pop_pct(w_diff_dict)
     odict = {
         'verbal_score': score,
         'verbal_percentile': percentile,

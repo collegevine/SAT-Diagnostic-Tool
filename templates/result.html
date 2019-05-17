@@ -69,6 +69,8 @@
       <div class="col-6">
           <img src="{{ math_plot }}"> 
       </div>
+    </div>
+  <div class="row">
       <div class="col-6">
           <img src="{{ verbal_plot }}"> 
       </div>
@@ -90,9 +92,11 @@
       </div>
   </div>
 
+{{ res_header("Areas of Score Improvement",3) }}
+<p>The following concepts have been identified as the areas in which further work will give you the best chance of improving your score! </p>
   <div class="row">
       <div class="col">
-        {{ res_header("Areas of Score Improvement - Math",3) }}
+        {{ res_header("Areas of Score Improvement - Verbal",3) }}
         {{ bs_table(cols_improve, table.m_improve) }}
       </div>
       <div class="col">
