@@ -38,6 +38,7 @@
 
     </div>
 
+  {% if show_rec %}
   {{ res_header("Course Recommendation",3) }}
   <div class="row">
       <div class="col">
@@ -46,6 +47,7 @@
           {{  para2_sent2(obj.math_question_percent, obj.reading_question_percent, obj.writing_question_percent) }} </p>
       </div>
   </div>
+  {% endif %}
 
   {{ res_header("Math Summary",3) }}
   <div class="row">
@@ -168,6 +170,7 @@
       </div>
   </div>
 </div>
+  {% if show_rec %}
   {{ res_header("Course Recommendation",3) }}
   <div class="row">
       <div class="col">
@@ -175,5 +178,6 @@
         Please let me know if you have any questions and we look forward to working further with you!
       </div>
   </div>
+  {% endif %}
   </div>
 {% endblock %}
