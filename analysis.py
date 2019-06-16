@@ -216,18 +216,21 @@ def plot_verbal(dicts):
     cols = ['difficulty', 'wrong','correct', 'total']
     v = pd.DataFrame.from_dict(dicts.get('reading_difficulty_plot'))[cols]
     w = pd.DataFrame.from_dict(dicts.get('writing_difficulty_plot'))[cols]
-    m = pd.merge(v,w, on='difficulty')
+    ## NOTE there is no LEVEL 1 in VERBAL section
+    ## so the solution here is to do an outer join
+    ## then just fill the NA's with 0
+    m = pd.merge(v,w, on='difficulty', how='outer')
+    m.fillna(0,inplace=True)
     m['wrong'] = m.apply(lambda row: row['wrong_x'] + row['wrong_y'],axis=1)
     m['total'] = m.apply(lambda row: row['total_x'] + row['total_y'],axis=1)
     m['correct'] = m.apply(lambda row: row['correct_x'] + row['correct_y'],axis=1)
     df = m.sort_values(['difficulty'])
 
     objects = ('Level 1 - Easy', 'Level 2 - Easy to Medium', 'Level 3 - Medium', 'Level 4 - Hard', 'Level 5 - Super-hard')
-    ## NOTE there is no LEVEL 1 in VERBAL section
     y_pos = np.arange(len(objects))
-    num_wrong = [0] + list(df['wrong'])
-    num_correct = [0] + list(df['correct'])
-    num_total = [0] + list(df['total'])
+    num_wrong = list(df['wrong'])
+    num_correct = list(df['correct'])
+    num_total = list(df['total'])
 
     p1 = plt.barh(y_pos, num_wrong, align='center', color = '#009F60', alpha = 0.5)
     p2 = plt.barh(y_pos, num_correct, align='center', color = '#009F60')
