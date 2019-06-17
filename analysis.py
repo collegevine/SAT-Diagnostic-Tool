@@ -157,7 +157,7 @@ def plot_math(dicts):
     num_total = list(df['total'])
     num_correct = list(df['correct'])
 
-    p1 = plt.barh(y_pos, num_wrong, align='center', color = '#009F60', alpha = 0.5)
+    p1 = plt.barh(y_pos, num_total, align='center', color = '#009F60', alpha = 0.5)
     p2 = plt.barh(y_pos, num_correct, align='center', color = '#009F60')
     plt.yticks(y_pos, objects)
     plt.xlabel('Questions Within Difficulty')
