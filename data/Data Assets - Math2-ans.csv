@@ -25,15 +25,15 @@ question,answer,difficulty,concept,concept2,explain
 24,D,3,Statistics,,data/math2/24.txt
 25,A,1,Definition of Functions,,data/math2/25.txt
 26,C,5,Statistics,,data/math2/26.txt
-27,B,3,Definition of Functions,Systems of Equations,data/math2/27.txt
+27,B,3,Definition of Functions,System of Equations,data/math2/27.txt
 28,D,2,Statistics,,data/math2/28.txt
 29,B,2,Equation of a line,,data/math2/29.txt
 30,B,3,Definition of Functions,,data/math2/30.txt
 31,96,1,Properties of Integers,,data/math2/31.txt
 32,9,1,Properties of Integers,,data/math2/32.txt
-33,16,2,Systems of Equations,,data/math2/33.txt
+33,16,2,System of Equations,,data/math2/33.txt
 34,0.3,2,Properties of Integers,,data/math2/34.txt
-35,6 or 2,2,Systems of Equations,Definition of Functions,data/math2/35.txt
+35,6 or 2,2,System of Equations,Definition of Functions,data/math2/35.txt
 36,0,5,"Sin, Cos, & Tan",,data/math2/36.txt
 37,696,2,Definition of Functions,,data/math2/37.txt
 38,0.6,4,Compound Change,,data/math2/38.txt
