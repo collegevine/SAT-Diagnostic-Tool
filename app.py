@@ -28,7 +28,6 @@ def success():
     try:
         if request.method == 'POST':
             show_course_rec = True if request.form.get('show_course_rec') == "True" else False
-            print(f' show course rec {show_course_rec}')
             obj = run_analysis(request.form)
             tables = build_tables(obj)
             verbal_plot = plot_verbal(obj)

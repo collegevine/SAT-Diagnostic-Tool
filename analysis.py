@@ -232,7 +232,7 @@ def plot_verbal(dicts):
     num_correct = list(df['correct'])
     num_total = list(df['total'])
 
-    p1 = plt.barh(y_pos, num_wrong, align='center', color = '#009F60', alpha = 0.5)
+    p1 = plt.barh(y_pos, num_total, align='center', color = '#009F60', alpha = 0.5)
     p2 = plt.barh(y_pos, num_correct, align='center', color = '#009F60')
     plt.yticks(y_pos, objects)
     plt.xlabel('Questions Within Difficulty')
