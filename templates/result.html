@@ -97,13 +97,18 @@
 {{ res_header("Areas of Score Improvement",3) }}
 <p>The following concepts have been identified as the areas in which further work will give you the best chance of improving your score! </p>
   <div class="row">
-      <div class="col">
-        {{ res_header("Areas of Score Improvement - Verbal",3) }}
-        {{ bs_table(cols_improve, table.m_improve) }}
+      <div class="col-6">
+            <div class="card">
+                <h3 class="card-title">Areas of Score Improvement - Math</h3>
+                {{ bs_table(cols_improve, table.m_improve) }}
+            </div>
+
       </div>
-      <div class="col">
-        {{ res_header("Areas of Score Improvement - Verbal",3) }}
-        {{ bs_table(cols_improve, table.v_improve) }}
+      <div class="col-6">
+            <div class="card">
+                <h3 class="card-title">Areas of Score Improvement - Verbal</h3>
+                    {{ bs_table(cols_improve, table.v_improve) }}
+            </div>
       </div>
   </div>
   {{ res_header("How you did on Reading",3) }}
