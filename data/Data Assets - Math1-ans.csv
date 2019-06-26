@@ -1,7 +1,7 @@
 question,answer,difficulty,concept,concept2,explain
-1,D,1,Properties of Integers,,"data/math1/1.txt"
+1,D,1,Basic Algebra,,"data/math1/1.txt"
 2,A,1,Equation of a Line,,"data/math1/2.txt"
-3,A,1,Properties of Integers,,"data/math1/3.txt"
+3,A,1,Basic Algebra,,"data/math1/3.txt"
 4,C,2,Triangles,Interior Angles of a Polygon,"data/math1/4.txt"
 5,B,2,Angles & Lines,,"data/math1/5.txt"
 6,B,1,Systems of Inequalities,,"data/math1/6.txt"
