@@ -1,7 +1,7 @@
 question,answer,difficulty,concept,concept2,explain
-1,A,1,Properties of Integers,,data/math2/1.txt
+1,A,1,Basic Algebra,,data/math2/1.txt
 2,C,1,Definition of Functions,,data/math2/2.txt
-3,A,1,Properties of Integers,,data/math2/3.txt
+3,A,1,Basic Algebra,,data/math2/3.txt
 4,C,2,Equation of a Line,Statistics,data/math2/4.txt
 5,B,2,Parallel & Perpendicular lines,Angles & Lines,data/math2/5.txt
 6,D,1,System of Equations,,data/math2/6.txt
@@ -9,10 +9,10 @@ question,answer,difficulty,concept,concept2,explain
 8,B,3,Exponents,Complex Equations,data/math2/8.txt
 9,D,2,Angles & Lines,,data/math2/9.txt
 10,D,4,Equation of a Line,Definition of Functions,data/math2/10.txt
-11,B,1,Properties of Integers,,data/math2/11.txt
+11,B,1,Basic Algebra,,data/math2/11.txt
 12,C,1,Systems of Inequalities,,data/math2/12.txt
 13,C,3,Exponents,Complex Equations,data/math2/13.txt
-14,D,2,Properties of Integers,,data/math2/14.txt
+14,D,2,Basic Algebra,,data/math2/14.txt
 15,D,2,Angles & Lines,,data/math2/15.txt
 16,B,1,Definition of Functions,,data/math2/16.txt
 17,A,1,Statistics,,data/math2/17.txt
@@ -29,10 +29,10 @@ question,answer,difficulty,concept,concept2,explain
 28,D,2,Statistics,,data/math2/28.txt
 29,B,2,Equation of a Line,,data/math2/29.txt
 30,B,3,Definition of Functions,,data/math2/30.txt
-31,96,1,Properties of Integers,,data/math2/31.txt
-32,9,1,Properties of Integers,,data/math2/32.txt
+31,96,1,Basic Algebra,,data/math2/31.txt
+32,9,1,Basic Algebra,,data/math2/32.txt
 33,16,2,System of Equations,,data/math2/33.txt
-34,0.3,2,Properties of Integers,,data/math2/34.txt
+34,0.3,2,Basic Algebra,,data/math2/34.txt
 35,6 or 2,2,System of Equations,Definition of Functions,data/math2/35.txt
 36,0,5,"Sin, Cos, & Tan",,data/math2/36.txt
 37,696,2,Definition of Functions,,data/math2/37.txt
