@@ -74,11 +74,14 @@ def agg_counts_dict(df):
     return dict(df.apply(pd.value_counts).fillna(0).apply(sum, axis=1))
 
 def eval_str(istr):
-    estr = eval(istr)
-    if isinstance(estr, float):
-        return str(round(estr, 2))
-    else:
-        return istr
+    try:
+        estr = eval(istr)
+        if isinstance(estr, float):
+            return str(round(estr, 2))
+        else:
+            return istr
+    except:
+        return ""
 
 def qeq(query, ans):
     if query is '':
@@ -376,6 +379,7 @@ def mk_explain_dict_math(df):
     df_new = df.copy()
     df_new.loc[:,'explain2'] = df_new.apply(lambda row: get_math_explain(row['explain']), axis=1)
     df_new.loc[:,'explain'] = df_new['explain2']
+    df_new.loc[:,'section'] = df_new.apply(lambda row: "Math Calculator" if row['section'] == "Math1" else "Math No Calculator",axis=1)
     ddict = df_new[['section', 'question', 'response', 'answer','explain']].to_dict('records')
     return(ddict)
 
