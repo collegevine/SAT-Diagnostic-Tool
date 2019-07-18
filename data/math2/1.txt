@@ -1,3 +1,3 @@
-Choice A is correct.
-Because one pound of oranges costs $3, you know that e pounds of oranges would cost $3 times the number of pounds.
-Therefore, the answer is \(3e=\text{cost in dollars}\).
+<b>Choice A is correct.</b>
+Because one pound of oranges costs $3, you know that \(e\) pounds of oranges will cost $3 multiplied by the number of pounds.
+Therefore, \(3e=\text{cost in dollars}\).

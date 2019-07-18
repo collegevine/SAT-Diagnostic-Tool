@@ -1,9 +1,6 @@
-Choice C is correct.
-We know that Carlos’s goal was to have his total cars sold (x+y) be greater than or equal to 62, and that he failed to reach that goal.
-Therefore, we know that x+y must be less than 62, which is can be written mathematically as \(x+y \lt 62\).
-This limits our possible answers to A and C.
+<b>Choice C is correct.</b>
+We know that Carlos’s goal was to have his total cars sold \((x+y)\) be greater than or equal to 62, and that he failed to reach that goal. Therefore, \(x+y\) must be less than 62, which can be written mathematically as: \(x+y \lt 62\). This limits our possible answers to A and C.
 </br>
-We are also given that the total value of the cars sold is greater than $4,000,000.
-In other words, the combined value of x cars sold for $65,000 and y cars sold for $130,000 must be greater than $4,000,000. This is written mathematically as \(65,000x+130,000y \gt 4,000,000\)
 </br>
-C is the answer that has both of these inequalities.
+We are also given that the total value of the cars sold was greater than $4,000,000.
+In other words, the combined value of \(x\) cars sold for $65,000 and \(y\) cars sold for $130,000 must be greater than $4,000,000. This is written mathematically as: \(65,000x+130,000y \gt 4,000,000\).

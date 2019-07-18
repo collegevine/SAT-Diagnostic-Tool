@@ -1,10 +1,8 @@
-Choice A is correct. First we need to determine the amount of wheat produced in each of these years according to the line of best fit.
-1997+16 = 2013, and 1997+21 = 2017, so we plug in 21 and 16 into our best fit equation:
+<b>Choice A is correct.</b> 
+First, determine the amount of wheat produced in each of these years according to the line of best fit. 2013 represents an x-value of 16, and 2017 represents an x-value of 21. Plug 16 and 21 into the best fit equation: $$ 2017 /implies 1.93 \times 21+22.45=62.98 $$
+$$ 2013 \implies 1.93 \times 16+22.45=53.33 $$
 </br>
-<i>For</i> 2017: \(1.93*21+22.45 = 62.98\)
+Recall the percent increase equation and substitute in known values: $$ \text{% increase} = \frac{(\text{initial-final})}{\text{initial}} \times 100 $$
+$$ \text{% increase} = \frac{62.98-53.33}{53.33} = 0.181 \times 100 = 18.1% $$
 </br>
-<i>For</i> 2013: \(1.93*16+22.45=53.33\)
-</br>
-To find percent increase, we then subtract the final value from the initial value and divide by the initial value, then multiplying by 100:
-$$ \text{%increase}= \frac{62.98-53.33}{53.33}=0.181*100=18.1% $$
-Of the possible answers this is closest to 15%
+Of the possible answers, this is closest to 15%.

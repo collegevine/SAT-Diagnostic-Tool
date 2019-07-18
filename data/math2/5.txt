@@ -1,6 +1,6 @@
-Choice B is correct.
-Because lines d and e are parallel, the two triangles created by these lines intersecting angle \(a°\) contain equivalent angles.
-Since the sum of all angles in a triangle is equal to 180°, \(a+b+c=180\).
-Since we are given the values for \(b°\) and \(c°\), we plug in and solve for \(a°\), giving us \(a+30+40=180\) therefore \(a=180-70=110\), B.
+<b>Choice B is correct.</b>
+Because lines \(d\) and \(e\) are parallel, the two triangles created by these lines intersecting angle \(a°\) contain equivalent angles.
+Since the sum of all angles in a triangle is equal to 180°, we know that \(a+b+c=180\).
+Given the values for \(b°\) and \(c°\), we can solve for \(a°\): \(a+30+40=180\). Therefore, \(a=180-70=110\).
 </br>
 <img src="img-math/math2_5.png" alt="" border="3" height="300" width="400" />

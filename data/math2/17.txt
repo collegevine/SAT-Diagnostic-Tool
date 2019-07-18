@@ -1,9 +1,14 @@
-Choice A is correct. Mode is the number that comes up the most, median is the middle number in a set, and mean is the average across a set.
-</br></br>
-For mode: The mode age is 25 years old, because it has the highest frequency (9).
-</br></br>
-For median: Because you know there are 30 parents in the birthing class, the median will be the average of the 15th and 16th number (median of an even number is the average of the middle two numbers). 9+8= 16, so the 15th and 16th age are both 26 years old. Therefore, the median age is 26.
-</br></br>
-For mean: Add together the weighted total of all ages and divide by thirty (the total), giving you \(\frac{25*9+26*8+27*5+28*3+29*2+30*2+42*1}{30}=27.07\).
-
-Since we now know that mode is 25, median is 26, and mean is 27, the answer is \(mode \lt median \lt mean\)
+<b>Choice A is correct.</b>
+Recall that the mode is the number that appears the most, the median is the middle number in an ordered set, and the mean is the average across a set.
+</br>
+</br>
+Determine the <b>mode</b>: The mode is 25 because it has the highest frequency (9).
+</br>
+</br>
+Find the <b>median</b>: There are 30 parents in the birthing class, so the median will be the average of the 15th and 16th numbers (remember that the median of an even number is the average of the two middle numbers). The 15th and 16th parents are both 26 years old, so the median is 26. 
+</br>
+</br>
+Calculate the <b>mean</b>: Add together the weighted total of all ages and divide by 30: $$ \frac{(25 \times 9)+(26 \times 8)+(27 \times 5)+(29 \times 2)+(30 \times 2)+(42 \times 1)}{30} = 27.07 $$
+</br>
+</br>
+Since we know that the mode is 25, the median is 26, and the mean is 27, the answer is \(\text{mode} \lt \text{median} \lt \text{mean}\).

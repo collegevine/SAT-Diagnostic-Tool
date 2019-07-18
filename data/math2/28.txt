@@ -1,3 +1,4 @@
-Choice D is correct.
-First we can calculate the ranges of each data set by taking \(196-164=32\) and \(204-172=32\).
-Performing these calculations, we see that the range for both is 32, therefore the range stays equal across the two data sets. This limits our possible answers to A and D. From the distribution of dots (normal distribution vs. flat distribution), we can see that the variance is not equal for these two data sets, so the answer must be D.
+<b>Choice D is correct.</b>
+First, calculate the ranges of each data set by subtracting the minimum from the maximum: $$ \text{Before modification}=196-164=32 $$
+$$ \text{After modification}=204-172=32 $$
+The range for both sets is 32, therefore \(r_1=r_2\). This limits our possible answers to A and D. From the distribution of dots (normal distribution vs. flat distribution), it is evident that the variance is not equal for these two data sets, so \(v_1 \neg v_2\).

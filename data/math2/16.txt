@@ -1,5 +1,5 @@
-Choice B is correct.
-The key to these chart questions is to select the categories and data relevant to the question, here they want to know the proportion of seniors <b>who took vitamins</b> that <b>reported pain</b>. Select only the relevant information.
+<b>Choice B is correct.</b>
+The key to chart questions is to focus only on the data relevant to the question. Here, they want to know the proportion of seniors <i>who took vitamins</i> that <i>reported pain</i>. Select only the relevant information.
  <table style="width:100%">
   <tr>
     <th></th>
@@ -29,7 +29,7 @@ The key to these chart questions is to select the categories and data relevant t
   </tr>
 
 </table>
-Now to find the proportion you take the number of seniors on vitamins who felt pain and divide it by the total number of seniors on vitamins, which is \(\frac{28}{200}=\frac{7}{50}\) which is B
+To find the proportion, take the number of seniors on vitamins who felt pain and divide it by the total number of seniors on vitamins, which is \(\frac{28}{200}=\frac{7}{50}\).
 
 
 

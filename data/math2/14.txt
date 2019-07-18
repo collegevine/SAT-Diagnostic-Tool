@@ -1,5 +1,8 @@
-Choice D is correct. A fraction is undefined when its denominator equals zero, therefore this question is asking for us to find a y value where \(y^2+2y-15=0\)
+<b>Choice D is correct.</b>
+A fraction is undefined when its denominator equals zero. Therefore, this question is asking for us to find \(y\) where \(y^2+2y-15=0\). 
 </br>
-First we factor the polynomial out, leaving us with \((y+5)(y-3)=0\). This means that the denominator equals zero when \(y = -5\) and when \(y = 3\).
 </br>
-Looking through our possible answers, of -5 and 3 only 3 is given. Therefore, the answer is D
+Factor the polynomial to find the equivalent expression \((y+5)(y-3)=0\). From the roots of this equation, we know that the denominator equals zero when \(y=-5\) and when \(y=3\).
+</br>
+</br>
+Looking through our possible answers, of \(-5\) and \(3\), only \(3\) is given.

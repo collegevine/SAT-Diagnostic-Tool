@@ -1,7 +1,6 @@
-Choice B is correct. We need to find how many years it will take for the cumulative difference between the initial annual cost and the expected high efficiency annual cost to overtake the cost of implementing the high efficiency system ($11,000).
+<b>Choice B is correct.</b> 
+We need to determine the number of years required for the cumulative difference between the initial annual cost and the high efficiency annual cost to overtake the cost of installing the high efficiency system ($11,000).
 </br></br>
-In other words, we need to find the point where enough time has passed that 11,000 is less than the initial annual cost minus the more efficient annual cost times the number of years.
+In other words, we need to find the point where enough years have passed that 11,000 is less than the initial annual cost minus the more efficient annual cost multiplied by the number of years. Translated to a mathematical equation, that comes to: \(11,000 \lt (\text{cost_initial} - \text{cost_efficient})y\)
 </br></br>
-Describing that as an equation, we get \(11000 \lt (\text{cost initial} - \text{cost efficient})y\), where y is the number of years.
-</br></br>
-Plugging in our initial annual cost of $2,286, and our new efficient cost of $1,053, we are left with the equation \(11000<(2286-1053)y\)
+Plug in known values to reach the final equation: \(11,000<(2,286-1,053)y\)

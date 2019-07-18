@@ -1,7 +1,7 @@
-Choice C is correct.
+<b>Choice C is correct.</b>
 The key information here is that the professionals surveyed were all from an <i>office park</i>.
-This is a major selection bias in sampling, so the only conclusions you could draw would be about people from that office park.
-If you wanted to talk about the work hours for the entire city you would need to survey professionals from all kinds of disciplines. Therefore, the sampling method is flawed, which is stated in C.
+This is a major selection bias in sampling, so the only conclusions one could draw would be about people from that office park.
+If you wanted to talk about the work hours for the entire city, you would need to survey professionals from all kinds of disciplines. Therefore, the sampling method is flawed.
 </br></br>
 <i>Note: The sample size is also fairly small, definitely too small to make conclusions about the entire city, so B can also be a tempting answer. However, the sampling bias is much more significant, and “sampling method” (in C) could include sample size.</i>
 

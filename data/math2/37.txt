@@ -1,8 +1,8 @@
-696 is correct.
-For this question we will use the data available in the chart.
-Since we know that at 4 minutes there are 54 grams of salt per liter of water, we can multiply 15 liters of water by 54 grams to obtain \(15L*54g/L=810g\) at 4 minutes.
+<b>696 is correct.</b>
+For this question, use the data available in the chart.
 </br></br>
-We also know from the chart that there are 19 grams per liter of salt at 8 minutes.
-We multiply this by 6 liters to get \(6L*19g/L=114g\).
+At 4 minutes, there are 54 grams of salt per liter of water. Multiply this concentration by 15 liters: \(54 \times 15=810\) grams of salt in 15 liters of water at 4 minutes.
 </br></br>
-Now we take the difference between these two values to get our answer, \(810g-114g=696g\)
+We also know from the chart that there are 19 grams of salt per liter at 8 minutes. Multiply this concentration by 6 liters: \(19 \times 6=114\) grams of salt in 6 liters of water at 8 minutes.
+</br></br>
+Now we take the difference to get our answer: \(810g-114g=696g\).

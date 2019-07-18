@@ -1,7 +1,5 @@
-Choice B is correct.
-First we need to untangle exactly what this problem is saying.
-The graph is of \(g(x)\), the table shows \(f(x)\) values for given values of x. Then it says “the minimum value of g is a”. What that is saying is that <b>the minimum y value for the function \(g(x)\) is a</b>.
-Since we can see the lowest \(y\) value on the graph of \(g(x)\) is -4, we know that <b>\(a=-4\)</b>.
+<b>Choice B is correct.</b>
+First, we need to untangle exactly what this problem is presenting.
+The graph is of \(g(x)\), and the table shows \(f(x)\) values for given values of \(x\). The problem then defines the minimum of \(g\) to be \(a\). In other words, the minimum \(y\) value for the function \(g(x)\) is \(a\). We can see the lowest \(y\) value on the graph of \(g(x)\) is \(-4\), so \(a=-4\).
 </br></br>
-From there the problem asks for us to plug <b>“a”</b> into \(f(x)\) and determine the value.
-Use the table to find the value for \(f(x)\) when \(x=-4\), and you see that <b>\(f(-4)=-1\)</b>, which is \(B\).
+From there, plug \(a=-4\) into \(f(x)\) to determine \(f(-4)\). Use the table to find that \(f(-4)=-1\). 

@@ -379,7 +379,8 @@ def mk_explain_dict_math(df):
     df_new = df.copy()
     df_new.loc[:,'explain2'] = df_new.apply(lambda row: get_math_explain(row['explain']), axis=1)
     df_new.loc[:,'explain'] = df_new['explain2']
-    df_new.loc[:,'section'] = df_new.apply(lambda row: "Math Calculator" if row['section'] == "Math1" else "Math No Calculator",axis=1)
+    df_new.loc[:,'section'] = df_new.apply(lambda row: "Math No Calculator" if row['section'] == "Math1" else "Math Calculator",axis=1)
+    #df_new.replace({'Math1' : 'Math Calculator', 'Math2': 'Math No Calc'})
     ddict = df_new[['section', 'question', 'response', 'answer','explain']].to_dict('records')
     return(ddict)
 

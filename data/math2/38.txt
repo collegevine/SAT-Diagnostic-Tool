@@ -1,8 +1,6 @@
-0.6 is correct. We can determine the value of p by plugging in one of the answers from the chart into our equation. I’ll choose 4 and 54.
+<b>0.6 is correct.</b> 
+We can determine the value of \(p\) by plugging in one of the coordinate pairs from the chart into our equation.
 </br></br>
-Plugging these values in, we end up with \(54=150p^{4/2} \)
-</br></br>
-Now dividing both sides by 150 will leave us with \(p^2=\frac{54}{150}=0.36\)
-</br></br>
-Take the square root of both sides \(\sqrt{p^2}=\sqrt{0.36}=0.6\), therefore \(0.6=p\)
-</br></br>
+For example, plug the pair \((4,54)\) into the function \(S\): $$ 54=150p^{4/2} $$
+Divide both sides by 150: $$ p^{4/2}=\frac{54}{150}=0.36 $$
+Take the square root to solve: $$ \sqrt{p^2}=\sqrt{0.36}=0.6 $$

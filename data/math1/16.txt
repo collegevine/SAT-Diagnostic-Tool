@@ -1,3 +1,9 @@
-5 is correct. \(b\) must one of the roots, which is easiest to find if we factor \(x^2-2x-15\).
-Think of two numbers that add to \(−2\) and multiply to \(−15\), and we get \((x-5)(x+3)\).
-Thus, the solutions are \(−3\) & \(5\), but as the question asks that \(b \gt 0\), we can only use \(b=5\).
+<b>5 is correct.</b> \(b\) must be one of the roots of \(x^2-2x-15\):
+</br>
+</br>
+Factor: $$ x^2-2x-15 $$ 
+$$ (x-5)(x+3) $$
+Identify solutions to the equation: $$ x=5 & x=-3 $$
+</br>
+As the question notes that \(b \gt 0\), we know that \(b \neg -3\) but rather \(b=5\).
+

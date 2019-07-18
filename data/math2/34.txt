@@ -1,3 +1,5 @@
-0.3 is correct.
-The key to this question is to make sure that you have your answer in the correct units.
-There are 60 minutes per hour, so you need to multiply the number of hours by 60 and divide 45 miles by the number of minutes. The full equation is \(\frac{45}{60*2.5}=0.3\frac{miles}{minute}\)
+<b>0.3 is correct.</b>
+The key to this question is to present your answer in the correct units:
+</br></br>
+First, convert their flying speed and duration to miles and minutes: $$ \frac{45 \text{miles}}{2.5 \text{hours}} \times \frac{1 \text{hour}}{60 \text{minutes}} = \frac{45 \text{miles}}{150 \ text{minutes}} $$
+Simplify: $$ \frac{45}{150} = 0.03 \text{miles per minute} $$

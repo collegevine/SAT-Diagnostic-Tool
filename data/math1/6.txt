@@ -1,1 +1,1 @@
-Choice B is correct. We can plug in \(6x>5\) straight into \(y \leq 6x-2\),which gives us \(y<5-2y<3\), which is B.
+<b>Choice B is correct.</b> We can plug in \(6x>5\) straight into \(y \leq 6x-2\), which gives us \(y \leq 5-2\) or \(y \leq 3\).

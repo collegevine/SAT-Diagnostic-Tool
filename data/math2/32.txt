@@ -1,5 +1,5 @@
-9 is correct. First, plug 2 into the equation for b, leaving you with \(\frac{1}{3}a-2=1\)
-</br></br>
-Next, add 2 to both sides of the equation so that a is isolated, \(\frac{1}{3}a=3\)
-</br></br>
-Finally, multiply both sides by three to get your answer, \(a=9\)
+<b>9 is correct.</b> 
+First, plug 2 into the equation for \(b\): $$ \frac{1}{3}a-2=1 $$
+Simplify to solve for \(a\): $$ \frac{1}{3}a=3 $$
+$$ a=9 $$
+

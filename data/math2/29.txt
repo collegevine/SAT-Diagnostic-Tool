@@ -1,7 +1,5 @@
-Choice B is correct. The key thing to understand here is that rate of consumption is constant. We would not use a variable rate equation for gasoline consumption, since the lawnmower will use the same amount of gasoline per minute regardless of how much gasoline is in the tank. Therefore, we take the amount of gasoline lost so far (20% of 10 gallons) and divide that by 40 minutes to determine how much gasoline will be lost per minute.
-</br></br>
-The equation for that is: \(\frac{.2*10}{40}=0.05\)
-</br></br>
-Taking the initial gasoline content, we can subtract .05 times the number of minutes to determine how much remains in the tank.
-</br></br>
-This would be written as \(g=10-0.05m\), which is B.
+<b>Choice B is correct.</b> 
+The key thing to understand here is that rate of consumption is constant, i.e. linear. We would not use a variable rate equation for gasoline consumption because the lawnmower will use the same amount of gasoline per minute regardless of how much gasoline is in the tank.
+</br></br> 
+To determine how much gasoline is used per minute, take the amount of gasoline lost so far (20% of 10 gallons) and divide that by 40 minutes: $$ \frac{0.20 \times 10}{40}=0.05 $$
+Take the initial gasoline volume and subtract \(0.05m\) to determine how much remains in the tank: $$ g=10-0.05m $$

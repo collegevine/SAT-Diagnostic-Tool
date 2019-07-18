@@ -1,5 +1,10 @@
-Choice B is correct.
-Because the answer is asking about the value of x+2 instead of the value of x in these equations, visually it can be easier to rewrite the equation as \(y=\frac{3}{y}\) (with \(y=x+2\)).
-In this form it becomes clear that the answer must be \(\sqrt{3}\).
-A way to visualize this is by rewriting the 3 in the numerator as \(\sqrt{3} \times \sqrt{3}\),
-leaving you with \(\sqrt{3}=\frac{\sqrt{3}\sqrt{3}}{\sqrt{3}}\), cancel the \(\sqrt{3}\) in the numerator and denominator and you are left with the answer, B.
+<b>Choice B is correct.</b>
+Because the problem is asking about the value of \(x+2\) instead of the value of \(x\), simplify the appearance of this equation:
+</br>
+</br>
+Set \(x+2\) equal to \(y\): $$ x+2=\frac{3}{x+2} $$
+$$ y=\frac{3}{y} $$
+Cross-multiply and simplify: $$ y^2=3 $$
+$$ y=\sqrt{3} $$
+</br>
+Since we originally defined \(y=x+2\), then \(x+2\) must also be equal to \(\sqrt{3}\).

@@ -1,4 +1,4 @@
-24 is correct. Add the expressions:
+<b>24 is correct.</b> Add the expressions:
 $$\begin{align}
 x^2+4x+40   \\
 \underline{+\quad −3x^2-2x-16}& \\

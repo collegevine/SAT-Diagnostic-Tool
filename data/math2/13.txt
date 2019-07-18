@@ -1,5 +1,8 @@
-Choice C is correct. Using exponent rules we know that a negative exponent gives the inverse and a fractional exponent gives the root of the base term. Therefore we can rewrite \(c^\frac{-1}{3}\) as \( \frac{1}{\sqrt[3]{c}}\).
+<b>Choice C is correct.</b> 
+Using exponent rules, we know that a negative exponent gives the inverse and a fractional exponent gives the root of the base term. Therefore, we can rewrite \(c^{\frac{-1}{3}}\) as \(\frac{1}{\sqrt[3]{c}}\).
 </br>
-Now we solve for c in  \( \frac{1}{\sqrt[3]{c}} = y\), rearrange by multiplying the denominator over and dividing by y, leaving you with \( \frac{1}{y}=\sqrt[3]{c} \)
-<br>
-Next, cube both sides to remove the cube root sign from c, leaving you with \(\frac{1}{y^3}=c\)
+</br>
+Rearrange and solve for \(c\): $$ \frac{1}{\sqrt[3]{c}}=y $$
+$$ \frac{1}{y}=\sqrt[3]{c} $$
+Cube both sides to isolate \(c\): $$ \frac{1}{y^3}=c $$
+

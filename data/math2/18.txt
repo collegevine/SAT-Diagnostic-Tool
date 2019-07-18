@@ -1,5 +1,5 @@
-Choice C is correct.
-Since you are not given the equation for the line of best fit, you should look at the graph and make your best approximation of what the percent of frozen water would remain frozen at -3℃.
-Looking at the line of best fit, approximately <b>53%</b> remains frozen at -3℃.
+<b>Choice C is correct.</b>
+As we are not given the equation for the line of best fit, look at the graph and make your best approximation of the percent of frozen water that would remain frozen at -3°C.
+Looking at the line of best fit, approximately <b>53%</b> remains frozen at -3°C.
 <img src="img-math/math2_18.png" alt="" border="3" height="300" width="300" />
 

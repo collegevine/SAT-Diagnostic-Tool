@@ -1,3 +1,6 @@
-16 is correct.
-Taking the equation \(8x+2y=s\), we can factor a 2 out of the terms on the left side of the equation, leaving us with \(2(4x+y)=s\).
-Since we know that \(4x+y=8\), we can plug into our factored equation, leaving us with \(2(8)=s=16\)
+<b>16 is correct.</b>
+</br></br>
+Factor out 2 from the equation \(8x+2y=s\): $$ 8x+2y=s $$
+$$ 2(4x+y)=s $$
+We know that \(4x+y=8\), so substitute this into the previous equation: $$ 2(4x+y) = 2(8) = s $$
+Solve for \(s\): $$ s=16 $$

@@ -1,10 +1,12 @@
-Choice D is correct. First let’s extract the relevant information from this word problem:
+<b>Choice D is correct.</b> First, let’s extract the relevant information from this word problem:
 <ul>
  <li> passes in leather seats are $85 each </li>
- <li> passes for hard plastic seats are $50 each</li>
+ <li> passes for plastic seats are $50 each</li>
  <li> 475 total passes were sold </li>
- <li> $23,500 had been raised through pass sales </li>
+ <li> $23,500 has been raised through pass sales </li>
 </ul>
-So if we say that S leather seats were sold and H hard seats were sold, we can make two equations — one where adding H and S together yields the total number of chairs, and one where adding H and S multiplied by their respective costs (85 for S and 50 for H) yields $23,500.
-This leaves us with the equations \(85S+50H = 23,500\) and \(S+H=475\), which is D
+Now translate this information into equation form. \(S\) and \(P\) together must equal the total number of passes sold: \(S+P=475\)
+</br>
+</br>
+And the combined revenue from these passes must equal $23,500. Multiplying \(S\) and \(P\) by their respective costs: \(85S+50P=$23,500\).
 

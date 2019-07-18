@@ -1,10 +1,8 @@
-0 is correct. The side lengths are not relevant in this problem, what is necessary is that you know that ∠ABC is a 90 degree angle, and that it would be split by line segment BE.
-A possible way that this would look is illustrated below, but E could be anywhere along line segment AC:
+<b>0 is correct.</b> 
+The side lengths are not relevant in this problem; what is necessary to know is that \(∠ABC=90°\), and that it is split by line segment \(\overline{BE}\). One possible way that this would look is illustrated below, but \(E\) could be anywhere along line segment \(\overline{AC}\):
 </br>
 <img src="img-math/math2_36.png" alt="" border="3" height="144" width="286" />
 </br>
-Here it is clear that \(∠CBE\) is equal to \(90-∠ABE\), therefore we can rewrite \(sin(∠ABE)-cos(∠CBE)\) as   \(sin(∠ABE)-cos(90-∠ABE)\).
-</br></br>
-Using our trig identities, we know that \(sin(x)=cos(90-x)\), therefore we can rewrite \(cos(90-∠ABE)\) as \(sin(∠ABE)\)
-</br></br>
-Rewriting the equation, we are left with \(sin(∠ABE)-sin(∠ABE)=0\), giving our answer.
+It is clear that \(∠CBE\) is equal to \(90-∠ABE\), so rewrite: $$ sin(∠ABE)-cos(∠CBE) \implies sin(∠ABE)-cos(90-∠ABE) $$
+Recall the trig identity \(sin(x)=cos(90-x)\) and rewrite: $$ cos(90-∠ABE) \implies sin(∠ABE) $$
+Simplify: $$ sin(∠ABE)-sin(∠ABE)=0 $$

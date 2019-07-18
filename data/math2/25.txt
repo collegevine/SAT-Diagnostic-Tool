@@ -1,14 +1,11 @@
-Choice A is correct. This question is asking for you to calculate the slope from the data set and then come up with an equation (which will end up in slope-intercept form) that describes the change in class size over the years.
+<b>Choice A is correct.</b> 
+This question is asking you to calculate the slope from the data set and then come up with an equation in slope-intercept form that models the change in class size over the years.
 </br>
 </br>
-First we calculate the slope using \(\frac{y_2-y_1}{x_2-x_1}=\frac{727-753}{2016-2006}=frac{-26}{10}=-2.6\)
+First, calculate the slope: $$ \frac{y_2-y_1}{x_2-x_1}=\frac{727-753}{2016-2006}=\frac{-26}{10}=-2.6 $$
+Determine the y-intercept. 2006 is considered year 0, so the y-intercept is the size of the class in 2006: $$ b=753 $$
+Combine these terms to produce a slope-intercept equation modeling the senior class size: $$ S(y)= 753-2.6y $$
 </br>
 </br>
-Then we plug into slope intercept form, with the y-intercept equal to the 2006 value (year 0). This gives us \(S(y)=-2.6y+753\).
-</br>
-</br>
-This does not exactly match any of the answers, but by rearranging the addition in the right side of the equation we are left with \(S(y)=753-2.6y\), which is A
-</br>
-</br>
-<i> Note: “y” in the final equation just stands for year, it is actually the independent variable (x-axis variable).
+<i> Note: “y” in the final equation just stands for year; it is actually the independent variable (x-axis variable).
 This is different from the y-value in \(\frac{y_2-y_1}{x_2-x_1}\), which was referring to the two dependent variables.</i>

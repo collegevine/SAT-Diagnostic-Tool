@@ -1,6 +1,7 @@
-Choice B is correct.
-Since we know that y is equal to the number of years and f is equal to the number of half years, and we know that there are two half years for every year, we can write this out as \(f=2y\).
-Solve for y here, and then plug in the answer for y to get your new rate equation.
-</br>
-</br>
-\(\frac{f}{2}=y\), therefore \(R=1500(1.03)^\frac{f}{2}\)is the same as \(R=1500(1.03)^y\)
+<b>Choice B is correct.</b>
+We know that \(y\) is equal to the number of years and \(f\) is equal to the number of half years. 
+</br></br>
+There are two half years for every year; given any number of half years, you would need to divide \(f\) by 2 to get to \(y\): $$ y=\frac{f}{2} $$
+Substitute this new \(y\) into the original rate equation: $$ R=1500(1.03)^y $$
+$$ R=1500(1.03)^\frac{f}{2} $$
+

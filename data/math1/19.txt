@@ -1,1 +1,1 @@
-4 is correct. The question asks for the y-intercept of a linear equation that characterizes the growth of this restaurant chain, and we see that the chain begins with 4 restaurants. In other words, at \(x=0\) months, \(y=4\).
+<b>4 is correct.</b> The question asks for the y-intercept of a linear equation that characterizes the growth of this restaurant chain, and we see that the chain begins with 4 restaurants. In other words, at \(x=0\) months, \(y=4\).
